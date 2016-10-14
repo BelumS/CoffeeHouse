@@ -3,6 +3,7 @@ package com.quadcore.chat.controller;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import com.quadcore.chat.model.Greeting;
 import com.quadcore.chat.model.HelloMessage;
@@ -13,7 +14,7 @@ import com.quadcore.chat.model.HelloMessage;
 public class GreetingController {
 	
 	//The payload of the message is bound to a HelloMessage object which is passed into greeting().
-	@MessageMapping("/hello") //invokes the greeting() method, when a message is sent to /hello
+	@MessageMapping("/com/quadcore/chat/") //invokes the greeting() method, when a message is sent to /hello
 	@SendTo("/topic/greetings")
 	public Greeting greeting(HelloMessage message) throws Exception
 	{
