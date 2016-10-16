@@ -1,9 +1,141 @@
 <!doctype html>
 <html lang="en">
-<head>
-</head>
-<body>
-   <div class="container">
-   </div>
-</body>
+    <head>
+        <title>Coffee House - Login</title>
+        <meta author="Quadcore"/>
+        <meta published-date="10/14/16"/>
+        <meta charset="utf-8"/>
+        <meta name="viewport" width="device-width"/>
+
+        <style>
+            /* reset styles */
+            body, div, .container, section, h1, h3, form, fieldset, label, input, button {
+                margin: 0;
+                padding: 0;
+                border: 0;
+            }
+
+            /* body & page containers */
+            body {
+                margin: 0 auto;
+                background-color: gainsboro;
+            }
+
+            .container {
+                padding: 10px;
+                margin: 10%;
+            }
+
+            /* headings */
+            h1#greeting {
+
+            }
+            h1#sub-heading{
+                font-size: 90%;
+                position: relative;
+                left: 30px;
+                margin: 10px;
+            }
+            /* form-content */
+            #coffee-form-header {
+                padding: 10px;
+                background-color: #121212;
+                color: wheat;
+                border-bottom: 1px solid gray;
+                position: relative;
+                bottom: 70px;
+                right: 70px;
+                width: 175%;
+                text-align: center;
+                font-weight: bold;
+            }
+            form#login-form{
+                position: relative;
+                left: 60px;
+                padding: 10px;
+                width: 700px;
+            }
+            fieldset {
+                padding: 10%;
+                border: 1px solid black;
+                border-radius: 5px;
+                background-color: #1E1E1E;
+                border: 1px solid black;
+                width: 10%;
+                height: 100px;
+            }
+            fieldset #credentials {
+                position: relative;
+                bottom: 40px;
+            }
+            fieldset #username {
+                background-color: #141414;
+                color: #B4B8B7;
+                padding: 10px;
+                border-bottom: 1px solid;
+            }
+            fieldset #password {
+                padding: 10px;
+                background-color: #141414;
+                color: #B4B8B7;
+            }
+            fieldset #register-text {  
+                float: left;
+                position: relative;
+                bottom: 25px;
+                right: 11px;
+            }
+            fieldset #forgot-password-text {
+                float: right;
+                position: relative;
+                bottom: 45px;
+                left: 20px;
+            }
+            fieldset button#login-button {
+                background-color: burlywood;
+                clear: both;
+                position: relative;
+                bottom: 35px;
+                right: 20px;
+                width: 130%;
+                border-radius: 5px;
+                height: 40px;
+            }
+            fieldset button#login-button:hover {
+                background-color: coral;
+            }
+            
+            fieldset a {
+                text-decoration: none;
+                color: saddlebrown;
+            }
+            fieldset a:visited {
+                color: gold;
+            }
+            fieldset a:hover, fieldset a:focus {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <section id="main-content">
+                <h1 id="greeting">Welcome to the Coffee House</h1>
+                <h1 id="sub-heading">. . . Doors open when you Login!</h1>
+
+                <form method="post" id="login-form">
+                    <fieldset>
+                        <div id="coffee-form-header"><label>Coffee Login</label></div>
+                        <div id="credentials">
+                            <div><label><input id="username" placeholder="Username" type="text" required maxlength="15"/></label></div>
+                            <div><label><input id="password" placeholder="Password" type="password" required maxlength="15"/></label></div>
+                        </div>
+                        <div id="register-text"><label><a href="#">Register</a></label></div>
+                        <div id="forgot-password-text"><label><a href="#">Forgot Password?</a></label></div>
+                        <div><button id="login-button">Login</button></div>
+                    </fieldset>
+                </form>
+            </section>
+        </div>
+    </body>
 </html>
