@@ -1,13 +1,13 @@
 package com.quadcore.chat.model;
 
-//Models a User
-public class User {
+//Models a UserInfo
+public class UserInfo {
 	
 	private String username;
 	private String password;
 	private String email;
 	
-	public User(){}
+	public UserInfo(){}
 	
 	public String getUsername()
 	{
