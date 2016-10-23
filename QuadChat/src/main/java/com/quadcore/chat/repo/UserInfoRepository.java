@@ -1,10 +1,10 @@
-package com.quadcore.chat.service;
+package com.quadcore.chat.repo;
 
 import com.quadcore.chat.model.UserInfo;
 
-public interface UserInfoService {
+public interface UserInfoRepository {
 	
-	//void addUser(UserInfo userInfo); *reserved for ADMIN role
+	//void addUser(UserInfo userInfo);// *reserved for ADMIN role
 	//void changeUsername(UserInfo userInfo, String username); *cannot be done? || *reserved for ADMIN
 	void changePassword(UserInfo userInfo, String password);
 	void changeEmail(UserInfo userInfo, String email);

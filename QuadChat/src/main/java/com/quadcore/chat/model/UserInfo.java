@@ -1,6 +1,6 @@
 package com.quadcore.chat.model;
 
-//Models a UserInfo
+//Models a User's information
 public class UserInfo {
 	
 	private String username;
@@ -8,6 +8,11 @@ public class UserInfo {
 	private String email;
 	
 	public UserInfo(){}
+	public UserInfo(String username, String password)
+	{
+		this.username = username;
+		this.password = password;
+	}
 	
 	public String getUsername()
 	{
@@ -22,7 +27,11 @@ public class UserInfo {
 	{
 		return password;
 	}
-	
+	public void setPassword(String password)
+	{
+		this.password = password;
+	}
+		
 	public String getEmail()
 	{
 		return email;
@@ -31,5 +40,4 @@ public class UserInfo {
 	{
 		this.email = email;
 	}
-
 }
