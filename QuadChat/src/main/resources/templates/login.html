@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en">
     <head>
         <title>Coffee House - Login</title>
-        <meta author="Quadcore"/>
-        <meta published-date="10/14/16"/>
-        <meta charset="utf-8"/>
-        <meta name="viewport" width="device-width"/>
-
+        <meta name="keywords" content="Online Chatroom, Web Application, Chatroom Website"/>
+        <meta name="description" content="The login page for Coffee House"/>
+        <meta name="revised" content="Coffee House, 10/25/14"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
         <style>
             /* reset styles */
-            body, div, .container, section, h1, h3, form, fieldset, label, input, button {
+            body, div, .container, section, h1, h2, h3, p, form, fieldset, label, input, button {
                 margin: 0;
                 padding: 0;
                 border: 0;
@@ -17,13 +17,10 @@
 
             /* body & page containers */
             body {
+                width: 400px;
+                height: 400px;
                 margin: 0 auto;
-                background-color: gainsboro;
-            }
-
-            .container {
-                padding: 10px;
-                margin: 10%;
+                background-color: burlywood;
             }
 
             /* headings */
@@ -31,111 +28,125 @@
 
             }
             h1#sub-heading{
-                font-size: 90%;
-                position: relative;
-                left: 30px;
-                margin: 10px;
             }
             /* form-content */
-            #coffee-form-header {
-                padding: 10px;
-                background-color: #121212;
-                color: wheat;
-                border-bottom: 1px solid gray;
-                position: relative;
-                bottom: 70px;
-                right: 70px;
-                width: 175%;
-                text-align: center;
+            legend {
+                font-size: 1.5em;
                 font-weight: bold;
             }
             form#login-form{
                 position: relative;
-                left: 60px;
-                padding: 10px;
-                width: 700px;
+                top: 60px;
+                left: 10px;
             }
             fieldset {
-                padding: 10%;
+                width: 400px;
+                height: 250px;
                 border: 1px solid black;
-                border-radius: 5px;
-                background-color: #1E1E1E;
-                border: 1px solid black;
-                width: 10%;
-                height: 100px;
+                padding: 3%;
+                background-color: chocolate;
             }
-            fieldset #credentials {
-                position: relative;
-                bottom: 40px;
-            }
-            fieldset #username {
-                background-color: #141414;
-                color: #B4B8B7;
-                padding: 10px;
-                border-bottom: 1px solid;
-            }
-            fieldset #password {
-                padding: 10px;
-                background-color: #141414;
-                color: #B4B8B7;
-            }
-            fieldset #register-text {  
-                float: left;
-                position: relative;
-                bottom: 25px;
-                right: 11px;
-            }
-            fieldset #forgot-password-text {
-                float: right;
-                position: relative;
-                bottom: 45px;
-                left: 20px;
-            }
-            fieldset button#login-button {
-                background-color: burlywood;
-                clear: both;
-                position: relative;
-                bottom: 35px;
-                right: 20px;
-                width: 130%;
-                border-radius: 5px;
+            fieldset input {
+                width: 100%;
                 height: 40px;
+                border-radius: 10px;
+            }/*
+            fieldset input:valid {
+                border: 1px solid green;
+            }*/
+            
+            fieldset div#credentials {
+                padding-top: 4%;
+                padding-bottom: 1%;
             }
-            fieldset button#login-button:hover {
-                background-color: coral;
+
+            fieldset input[type=text] {
+                margin-bottom: 6px;
+                background-color: darkgrey;
+                color: black;
+                padding-left: 5px;
+            }
+            fieldset input[type=text]:hover {
+                color:white;
             }
             
-            fieldset a {
+            fieldset input[type=password] {
+                padding-left: 5px;
+                background-color: darkgrey;
+            }
+            fieldset input[type=password]:hover {
+                color:ivory;
+            }
+            fieldset button#login-button {
+                text-align: center;
+                font-weight: bold;
+                font-size: 1em;
+                margin-top: 10px;
+                padding: 3%; 
+                clear: both;
+                width: 40%;
+                margin-bottom: 20px;
+                background-color: bisque;
+                border-radius: 10px;
+            }
+            div #register-text {  
+                float: left;
+                width: 50%;
+            }
+            div #forgot-password-text {
+                position: relative;
+                top: 18px;
+                left: 30px;
+                float: right;
+                width: 50%;
+
+            }
+
+            fieldset button#login-button:hover, fieldset button#login-button:focus {
+                background-color: cornflowerblue;
+                box-shadow: 5px 5px 5px #888; 
+            }
+            fieldset button#login-button:active {
+                background-color: darkgreen;
+            }
+
+            fieldset a:link {
+                color: blue;
                 text-decoration: none;
-                color: saddlebrown;
             }
             fieldset a:visited {
-                color: gold;
+                color: blueviolet;
             }
             fieldset a:hover, fieldset a:focus {
-                color: blue;
+                border: 1px solid white;
+                padding: 4px;
+                color: cornsilk;
+            }
+            fieldset a:active {
+                color:black;
             }
         </style>
     </head>
     <body>
         <div class="container">
             <section id="main-content">
-                <h1 id="greeting">Welcome to the Coffee House</h1>
-                <h1 id="sub-heading">. . . Doors open when you Login!</h1>
-
-                <form method="post" id="login-form">
+                <form id="login-form" method="post" onsubmit="">
                     <fieldset>
-                        <div id="coffee-form-header"><label>Coffee Login</label></div>
+                        <legend>Sign into Coffee House</legend>
                         <div id="credentials">
-                            <div><label><input id="username" placeholder="Username" type="text" required maxlength="15"/></label></div>
+                            <div><label><input id="username" placeholder="Username or Email address" type="text" required maxlength="25"/></label></div>
                             <div><label><input id="password" placeholder="Password" type="password" required maxlength="15"/></label></div>
                         </div>
-                        <div id="register-text"><label><a href="#">Register</a></label></div>
-                        <div id="forgot-password-text"><label><a href="#">Forgot Password?</a></label></div>
-                        <div><button id="login-button">Login</button></div>
+                        <div><button id="login-button">Sign in</button></div>
+                        <div id="register-text">
+                            <p>New User?</p><label><a href="#">Create an Account</a></label></div>
+                        <div id="forgot-password-text"><label><a href="#">Forgot your Login information?</a></label></div>
                     </fieldset>
                 </form>
+                <h6>&copy; Coffee House</h6>
             </section>
         </div>
+    <script>     
+    </script>
     </body>
 </html>
