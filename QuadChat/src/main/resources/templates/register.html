@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Coffee House - Login</title>
+        <meta name="keywords" content="Online Chatroom, Web Application, Chatroom Website"/>
+        <meta name="description" content="The registration page for Coffee House"/>
+        <meta name="revised" content="Coffee House, 10/25/14"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <style>
+            /* reset styles */
+            /* body, div, h1, h2, h3, p, form, fieldset, label, input, button {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            }*/
+
+            /* hyperlinks */
+            a:link {
+
+            }
+            a:visited {
+
+            }
+            a:active {
+
+            }
+            a:hover, a:focus {
+
+            }
+
+            /* body & page containers */
+            body {
+
+            }
+            .container {
+                margin: 0 auto;
+                max-width: 500px;
+            }
+            .fontAwesome {
+                font-family: Helvetica, FontAwesome, sans-serif;
+            }
+
+            /* headings */
+            h2 {
+                padding: 0;
+                margin: 0;
+                border: 0;
+            }
+
+            /* form-content */
+            form {
+
+            }
+            input {
+                margin: 5px;
+                padding: 1%;   
+            }
+            input[type=text] {
+                width: 90%;
+            }
+            input[type=email] {
+                width: 90%;
+            }
+            #password-div {
+                float: left;
+                width: 45%;
+            }
+            #confirm-div {
+                float: left;
+                width: 45%;
+            }
+            
+            input:focus {
+                border: 0;
+                outline: none;
+                box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+            }
+            input[type=submit] {
+                position: relative;
+                clear: both;
+            }
+            input[type=submit]:active {
+                background-color: crimson;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Create an Account</h2>
+            <form id="registration-form" method="post" onsubmit="">
+                <fieldset>
+                    <div id="username-div"><label><input class="fontAwesome" type="text" placeholder="&#xf007; Create a Username" required/></label></div>
+                    <div id="email-div"><label><input class="fontAwesome" type="email" placeholder="&#xf0e0; Enter your email address" /></label></div>
+                    <div id="password-div"><label><input class="fontAwesome" type="password" placeholder="&#xf084; Create a password" required/></label></div>
+                    <div id="confirm-div"><label><input class="fontAwesome" type="password" placeholder="&#xf023; Confirm password" required/></label></div>
+                    <div><input type="submit" value="Sign Up!"/></div>
+                </fieldset>
+                <p><a href="login.html">Back to login</a><p>
+            </form>
+        </div>
+        <script>     
+        </script>
+    </body>
+</html>
