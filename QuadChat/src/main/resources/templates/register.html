@@ -18,21 +18,22 @@
 
             /* hyperlinks */
             a:link {
-
+                text-decoration: none;
             }
             a:visited {
-
             }
             a:active {
 
             }
             a:hover, a:focus {
-
+                color: cadetblue;
             }
 
             /* body & page containers */
             body {
-
+                border: 1px solid;
+                background-color: beige;
+                box-shadow: 0 0 5px;
             }
             .container {
                 margin: 0 auto;
@@ -41,27 +42,50 @@
             .fontAwesome {
                 font-family: Helvetica, FontAwesome, sans-serif;
             }
+            .fixed-width {
+                width: 70%;
+                clear: both;
+                border-radius: 3px;
+                background-color: beige;;
+                color: black;
+                margin-left: 7%;
+            }
 
             /* headings */
             h2 {
-                padding: 0;
-                margin: 0;
-                border: 0;
+               text-align: center;
+               font-size: 200%;
+                color: cadetblue;
+                text-shadow: 0 0 5px gray;
+            }
+            hr {
+                width: 70%;
+                margin-bottom: 6%;
             }
 
             /* form-content */
             form {
-
+                text-align: left;
+                border: 0;
+                border-radius: 30px;
+                box-shadow: 5px 5px 15px gray;
+                background-color: goldenrod;
+            }
+            #register {
+                padding-top: 20px;
+            }
+            #register p {
+                margin-left: 5%;
             }
             input {
                 margin: 5px;
                 padding: 1%;   
             }
             input[type=text] {
-                width: 90%;
+
             }
             input[type=email] {
-                width: 90%;
+                
             }
             #password-div {
                 float: left;
@@ -71,18 +95,28 @@
                 float: left;
                 width: 45%;
             }
-            
+
             input:focus {
                 border: 0;
                 outline: none;
                 box-shadow: 0 0 5px rgba(81, 203, 238, 1);
             }
             input[type=submit] {
-                position: relative;
-                clear: both;
+               position: relative;
+                left: 34%;
+                width: 45%;
+                border-radius: 10px;
+                font-weight: bold;
+                background-color: cornflowerblue;
+                outline: none;
+                border: 1px dashed;
+                margin-bottom: 20px;
+            }
+            input[type=submit]:hover, input[type=submit]:focus{
+                box-shadow: 0 0 5px blue;
             }
             input[type=submit]:active {
-                background-color: crimson;
+                background-color: cadetblue;
             }
 
         </style>
@@ -90,16 +124,32 @@
     <body>
         <div class="container">
             <h2>Create an Account</h2>
+            <hr id="horiz-line">
             <form id="registration-form" method="post" onsubmit="">
-                <fieldset>
-                    <div id="username-div"><label><input class="fontAwesome" type="text" placeholder="&#xf007; Create a Username" required/></label></div>
-                    <div id="email-div"><label><input class="fontAwesome" type="email" placeholder="&#xf0e0; Enter your email address" /></label></div>
-                    <div id="password-div"><label><input class="fontAwesome" type="password" placeholder="&#xf084; Create a password" required/></label></div>
-                    <div id="confirm-div"><label><input class="fontAwesome" type="password" placeholder="&#xf023; Confirm password" required/></label></div>
-                    <div><input type="submit" value="Sign Up!"/></div>
-                </fieldset>
-                <p><a href="login.html">Back to login</a><p>
+                <div id="register">
+                    <p>
+                        <label>Enter your Username</label><br>
+                        <input class="fontAwesome fixed-width" type="text" maxlength="25" placeholder="&#xf007; coffeeusername1337"/>
+                    </p>
+                    <p>
+                        <label>Enter your Email</label><br>
+                        <input class="fontAwesome fixed-width" type="email" maxlength="25" placeholder="&#xf0e0; coffeebeans@email.net"/>
+                    </p>
+                    <p id="password">
+                        <label>Enter your Password</label><br>
+                        <input class="fontAwesome fixed-width" type="password" maxlength="15" placeholder="&#xf023; mypassword "/>
+                    </p>
+                    <p id="confirm">
+                        <label>Confirm your Password</label><br>
+                        <input class="fontAwesome fixed-width" type="password" maxlength="15" placeholder="&#xf023; mypassword"/>
+                    </p>
+                    <p>
+                        <input type="submit" value="CREATE"/>
+                    </p>
+                </div>
             </form>
+            <p>Already a User?<br>
+                <a href="login.html">Back to login</a></p>
         </div>
         <script>     
         </script>
