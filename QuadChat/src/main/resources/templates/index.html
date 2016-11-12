@@ -1,28 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Hello WebSocket</title>
-        <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <title>Welcome to Coffee House</title>
+
         <link href="/static/css/styles.css" rel="stylesheet">
-        <script src="/webjars/jquery/jquery.min.js"></script>
-        <script src="/webjars/sockjs-client/sockjs.min.js"></script>
-        <script src="/webjars/stomp-websocket/stomp.min.js"></script>
-        <script src="/static/js/app.js"></script>
-        
+
         <style>
-            /* reset style */
-            
+            /* reset styles */
+            html, body, div, header, nav, article, section, aside, footer, h1, h2, h3, h6 {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                outline: 0;
+                font-size: 100%;
+                vertical-align: baseline;
+                background: transparent;
+            }
+            body {
+                line-height: 1;
+            }
+            article, aside, section, header, footer, nav {
+                display: block;
+            }
+            nav ul {
+                list-style: none;
+            }
+            a {
+                margin: 0;
+                padding: 0;
+                font-size: 100%;
+                vertical-align: baseline;
+                background: transparent;
+            }
+            abbr[title] {
+                border-bottom: 1px dotted;
+                cursor: help;
+            }
+            hr {
+                display: block;
+                height: 1px;
+                border: 0;
+                border-top: 1px solid #ccc;
+                margin: 1em 0;
+                padding: 0;
+            }
+            input, select {
+                vertical-align: middle;
+            }
+            .clear {
+                clear: both;
+            }
+
             /* body & page container */
-            
+            html {
+                font-size: 14px;
+            }
+            body {
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+            .container {
+                border: 2px solid black;
+            }
+
             /* link states */
-            
+            a:link {
+                text-decoration: none;
+                color: black;
+            }
+            a:visited {
+                color: purple;
+            }
+            a:active {
+                color: lightsteelblue;
+            }
+            a:hover, a:focus {
+                color: chartreuse;
+            }
+
             /* navigation menu */
+            nav.site-nav {
+                width: 20%;
+            }
+            nav.site-nav ul {
+                border-radius: 10px;
+                position: relative;
+                right: 15px;
+            }
+            nav.site-nav li {
+                border: 1px solid;
+                border-radius: 10px;
+                text-align: center;
+            }
+            nav.site-nav li:first-child {
+                background-color: red;  
+            }
+            nav.site-nav li:nth-child(2) {
+                background-color: blue;    
+            }
+            nav.site-nav li:nth-child(3) {
+                background-color: green;    
+            } 
+            nav.site-nav li:nth-child(4) {
+                background-color: orange;    
+            } 
+            nav.site-nav li:last-child {
+                background-color: yellow;
+            }  
             
             /* main-content */
-            
+            article#main-content {
+                border: 1px solid green;
+                float: right;
+                width: 39%;
+            }
+
             /* chatroom content */
-            
+            section#chat-box-outer {
+                border: 1px solid red;
+                float: left;
+                margin-left: 2px;
+                width: 400px;
+                height: 350px;
+                border-radius: 15px;
+            } 
+            section h6 {
+                padding: 5px;
+                margin-left: 5px;
+            }
+            #chat-box-inner {
+                border: 1px solid blue;
+                height: 310px;
+                width: 390px;
+                position: relative;
+                left: 4px;
+                top: 8px;
+                border-radius: 10px;
+            }
+
             /* footer */
+            footer {
+                padding-top: 15px;
+            }
         </style>
     </head>
     <body>
@@ -37,55 +156,32 @@
             <header>
                 <h1>Welcome to the Coffee House!</h1>
             </header>
-            
-            <nav class="nav-menu">
-                <div><a href=""><button id="login-btn">Login</button></a></div>
-                <div><a href=""><button id="reg-btn">Register</button></a></div>
-                <div><a href=""><button id="chat-btn">Chat</button></a></div>
-                <div><a href=""><button id="logout-btn">Logout</button></a></div>
+
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="index.html">Lobbies</a></li>
+                    <li><a href="index.html">Settings</a></li>
+                    <li><a href="index.html">Logout</a></li>
+                </ul>
             </nav>
+            <article id="main-content">
+                <h3>Rules of the Chat:</h3>
+                <ul>
+                    <li>Use Appropriate Language</li>
+                    <li>No Images Allowed</li>
+                    <li>No External Links</li>
+                </ul>
+            </article>
 
-            <footer>Coffee House &copy; FALL 2016</footer>
+            <section id="chat-box-outer">
+                <h6>Reserved for the Chatroom!</h6>
+                <div id="chat-box-inner">
+                </div>
+            </section>
 
-            <!--
-<section id="chat-content">
-<div class="row">
-<div class="col-md-6">
-<form class="form-inline">
-<div class="form-group">
-<label for="connect">WebSocket connection:</label>
-<button id="connect" class="btn btn-default" type="submit">Connect</button>
-<button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect</button>
-</div>
-</form>
-</div>
-
-<div class="col-md-6">
-<form class="form-inline">
-<div class="form-group">
-<label for="name">What is your name?</label>
-<input type="text" id="name" class="form-control" placeholder="Your name here...">
-</div>
-<button id="send" class="btn btn-default" type="submit">Send</button>
-</form>
-</div>
-</div>
-
-<div class="row">
-<div class="col-md-12">
-<table id="conversation" class="table table-striped">
-<thead>
-<tr>
-<th>Greetings</th>
-</tr>
-</thead>
-<tbody id="greetings">
-</tbody>
-</table>
-</div>
-</div>
-</section>
--->
+            <footer class="clear">Coffee House &copy; FALL 2016</footer>
         </div>
     </body>
 </html>

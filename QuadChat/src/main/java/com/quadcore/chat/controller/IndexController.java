@@ -1,14 +1,15 @@
-package com.quadcore.chat.controller;
+/*package com.quadcore.chat.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller
+//@Controller
 public class IndexController {
 	
-	@GetMapping("/")
+	//@GetMapping("/")
 	public String index()
 	{
 		return "index";
 	}
 }
+*/

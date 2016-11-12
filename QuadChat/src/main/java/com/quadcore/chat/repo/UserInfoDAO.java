@@ -2,7 +2,7 @@ package com.quadcore.chat.repo;
 
 import com.quadcore.chat.model.UserInfo;
 
-public interface UserInfoRepository {
+public interface UserInfoDAO {
 	
 	//void addUser(UserInfo userInfo);// *reserved for ADMIN role
 	//void changeUsername(UserInfo userInfo, String username); *cannot be done? || *reserved for ADMIN

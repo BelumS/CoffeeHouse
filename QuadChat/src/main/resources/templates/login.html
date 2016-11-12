@@ -7,7 +7,7 @@
         <meta name="revised" content="Coffee House, 10/25/14"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
         <style>
             /* reset styles */
             body, div, .container, section, h1, h2, h3, p, form, fieldset, label, input, button {
@@ -16,7 +16,7 @@
                 border: 0;
             }
 
-            /* body & page containers */
+            /* body and page containers */
             body {
                 max-width: 700px;
                 background-color: beige;
@@ -144,18 +144,18 @@
     </head>
     <body>
         <div class="container">
-            <form id="login-form" method="post" onsubmit="">
+            <form id="login-form" method="post">
                 <fieldset>
                     <div id="credentials">
                         <p id="form-header">Sign into Coffee House</p>
-                        <div id="username-div"><label><input class="fontAwesome" type="text" placeholder="&#xf007; Username" required maxlength="25"/></label></div>
-                        <div id="password-div"><label><input class="fontAwesome" type="password" placeholder="&#xf084; Password" required maxlength="15"/></label></div>
+                        <div id="username-div"><label><input class="fontAwesome" type="text" placeholder="Username" required="required" maxlength="25"/></label></div>
+                        <div id="password-div"><label><input class="fontAwesome" type="password" placeholder="Password" required="required" maxlength="15"/></label></div>
                         <input type="submit" value="Sign in"/>
                     </div>
                     <div id="register-text">
                         <p>New User?</p><label><a href="register.html">Create an Account</a></label></div>
                     <div id="forgot-password-text">
-                        <p>Existing User?</p><label><a href="#">Forgot your Login<br>information?</a></label></div>
+                        <p>Existing User?</p><label><a href="#">Forgot your Login<br />information?</a></label></div>
                 </fieldset>
             </form>
         </div>

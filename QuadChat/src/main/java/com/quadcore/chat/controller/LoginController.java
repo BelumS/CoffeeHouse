@@ -14,10 +14,10 @@ public class LoginController {
 	@GetMapping("/login")
 	public String login()
 	{
-		logger.debug("This is a debug message.");
+		//logger.debug("This is a debug message.");
 		logger.info("Login method has been invoked!");
-		logger.warn("This is a warning message.");
-		logger.error("This is an error message.");
+		//logger.warn("This is a warning message.");
+		//logger.error("This is an error message.");
 		return "login";
 	}
 }

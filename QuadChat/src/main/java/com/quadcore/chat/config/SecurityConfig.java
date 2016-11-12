@@ -1,4 +1,4 @@
-package com.quadcore.chat.config;
+/*package com.quadcore.chat.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -7,9 +7,9 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 //@EnableWebSecurity
-public class SecurityConfig /*extends WebSecurityConfigurerAdapter*/ {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-	/*
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		//This page does not require login
@@ -44,5 +44,6 @@ public class SecurityConfig /*extends WebSecurityConfigurerAdapter*/ {
 		auth.inMemoryAuthentication()
 			.withUser("username").password("password").roles("USER");
 	}
-	*/
+	
 }
+*/
