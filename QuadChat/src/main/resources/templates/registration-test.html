@@ -1,0 +1,18 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	lang="en">
+<head>
+<title>Coffee House - Registration Parameters</title>
+<meta name="revised" content="Coffee House, 11/13/16" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div class="container">
+		<div th:if="${param.error}">Invalid username or password</div>
+		<div th:if="${param.logout}">You have been logged out.</div>
+	</div>
+</body>
+</html>

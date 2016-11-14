@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
     <head>
         <title>Welcome to Coffee House</title>
 
-        <link href="/static/css/styles.css" rel="stylesheet">
+        <link href="/static/css/styles.css" rel="stylesheet"/>
 
         <style>
             /* reset styles */
@@ -51,7 +51,7 @@
                 clear: both;
             }
 
-            /* body & page container */
+            /* body and page container */
             html {
                 font-size: 14px;
             }
@@ -148,7 +148,7 @@
         <div class="container">
             <noscript>
                 <h2 style="color: #ff0000">
-                    Seems your browser doesn't support Javascript!<br>
+                    Seems your browser doesn't support Javascript!<br />
                     Websocket relies on Javascript being enabled.
                     Please enable Javascript and reload this page!
                 </h2>
@@ -156,15 +156,19 @@
             <header>
                 <h1>Welcome to the Coffee House!</h1>
             </header>
-
+            
+            <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+			
             <nav class="site-nav">
                 <ul>
                     <li><a href="#">Login</a></li>
                     <li><a href="#">Register</a></li>
-                    <li><a href="index.html">Lobbies</a></li>
-                    <li><a href="index.html">Settings</a></li>
-                    <li><a href="index.html">Logout</a></li>
+                    <li><a href="#">Lobbies</a></li>
+                    <li><a href="#">Settings</a></li>
                 </ul>
+                    <form th:action="@{/logout}" method="post">
+                   	 <input type="submit" value="Log out"/>
+                    </form>
             </nav>
             <article id="main-content">
                 <h3>Rules of the Chat:</h3>

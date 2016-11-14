@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" 
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" lang="en">
     <head>
         <title>Coffee House - Login</title>
         <meta name="keywords" content="Online Chatroom, Web Application, Chatroom Website"/>
@@ -144,7 +145,13 @@
     </head>
     <body>
         <div class="container">
-            <form id="login-form" method="post">
+        <div th:if="${param.error}">
+        	Invalid username or password
+        </div>
+        <div th:if="${param.logout}">
+        	You have been logged out.
+        </div>
+            <form id="login-form" method="post" action="index.html" th:action="@{/}">
                 <fieldset>
                     <div id="credentials">
                         <p id="form-header">Sign into Coffee House</p>
@@ -153,7 +160,7 @@
                         <input type="submit" value="Sign in"/>
                     </div>
                     <div id="register-text">
-                        <p>New User?</p><label><a href="register.html">Create an Account</a></label></div>
+                        <p>New User?</p><label><a href="register.html" th:href="register.html">Create an Account</a></label></div>
                     <div id="forgot-password-text">
                         <p>Existing User?</p><label><a href="#">Forgot your Login<br />information?</a></label></div>
                 </fieldset>
