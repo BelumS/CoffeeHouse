@@ -8729,3 +8729,63 @@ org.xml.sax.SAXParseException: The element type "hr" must be terminated by the m
 2016-11-13 23:13:48.569  INFO 6788 --- [RMI TCP Connection(2)-192.168.56.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@53da4534: startup date [Sun Nov 13 23:13:03 CST 2016]; root of context hierarchy
 2016-11-13 23:13:48.595  INFO 6788 --- [RMI TCP Connection(2)-192.168.56.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
 2016-11-13 23:13:48.602  INFO 6788 --- [RMI TCP Connection(2)-192.168.56.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2016-11-15 13:04:22.688  INFO 1096 --- [restartedMain] com.quadcore.chat.ChatroomApplication    : Starting ChatroomApplication on FoshoyoBS with PID 1096 (started by BelumEx in C:\Users\BelumEx\git\Personal Web Application\QuadChat)
+2016-11-15 13:04:22.764  INFO 1096 --- [restartedMain] com.quadcore.chat.ChatroomApplication    : No active profile set, falling back to default profiles: default
+2016-11-15 13:04:23.441  INFO 1096 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@269a0b37: startup date [Tue Nov 15 13:04:23 CST 2016]; root of context hierarchy
+2016-11-15 13:04:25.817  INFO 1096 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a4a809a3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-11-15 13:04:26.472  INFO 1096 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2016-11-15 13:04:26.496  INFO 1096 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-11-15 13:04:26.497  INFO 1096 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.5
+2016-11-15 13:04:26.677  INFO 1096 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-11-15 13:04:26.686  INFO 1096 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3251 ms
+2016-11-15 13:04:27.045  INFO 1096 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-11-15 13:04:27.046  INFO 1096 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-11-15 13:04:27.046  INFO 1096 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-11-15 13:04:27.053  INFO 1096 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2016-11-15 13:04:27.055  INFO 1096 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2016-11-15 13:04:27.056  INFO 1096 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2016-11-15 13:04:27.533  INFO 1096 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2016-11-15 13:04:27.563  INFO 1096 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-11-15 13:04:27.670  INFO 1096 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.11.Final}
+2016-11-15 13:04:27.672  INFO 1096 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2016-11-15 13:04:27.674  INFO 1096 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2016-11-15 13:04:27.732  INFO 1096 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-11-15 13:04:28.450  INFO 1096 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-11-15 13:04:30.134  INFO 1096 --- [restartedMain] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2016-11-15 13:04:30.521  INFO 1096 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2016-11-15 13:04:32.627  INFO 1096 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6b256290, org.springframework.security.web.context.SecurityContextPersistenceFilter@fe09932, org.springframework.security.web.header.HeaderWriterFilter@40a86de0, org.springframework.security.web.csrf.CsrfFilter@1f88455e, org.springframework.security.web.authentication.logout.LogoutFilter@3ff45658, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@754f96ed, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@18e5b3bb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1507adf6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d111918, org.springframework.security.web.session.SessionManagementFilter@b434462, org.springframework.security.web.access.ExceptionTranslationFilter@2fbc914e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5e997f37]
+2016-11-15 13:04:32.982  INFO 1096 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@269a0b37: startup date [Tue Nov 15 13:04:23 CST 2016]; root of context hierarchy
+2016-11-15 13:04:33.198  INFO 1096 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.quadcore.chat.controller.IndexController.index()
+2016-11-15 13:04:33.213  INFO 1096 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.quadcore.chat.controller.LoginController.login()
+2016-11-15 13:04:33.229  INFO 1096 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[GET]}" onto public java.lang.String com.quadcore.chat.controller.RegisterController.register()
+2016-11-15 13:04:33.230  INFO 1096 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/registration-test],methods=[POST]}" onto public java.lang.String com.quadcore.chat.controller.RegisterController.registeredCredentials()
+2016-11-15 13:04:33.246  INFO 1096 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-11-15 13:04:33.247  INFO 1096 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-11-15 13:04:33.336  INFO 1096 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-15 13:04:33.336  INFO 1096 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-15 13:04:33.419  INFO 1096 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-15 13:04:34.854  INFO 1096 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2016-11-15 13:04:34.949  INFO 1096 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2016-11-15 13:04:35.054  INFO 1096 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-11-15 13:04:35.073  INFO 1096 --- [restartedMain] com.quadcore.chat.ChatroomApplication    : Started ChatroomApplication in 13.155 seconds (JVM running for 15.112)
+2016-11-15 13:07:59.983  INFO 1096 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-11-15 13:07:59.997  INFO 1096 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-11-15 13:08:00.106  INFO 1096 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 108 ms
+2016-11-15 13:08:00.755  INFO 1096 --- [http-nio-8080-exec-1] c.q.chat.controller.LoginController      : Login method has been invoked!
+2016-11-15 13:08:02.403  INFO 1096 --- [http-nio-8080-exec-3] c.q.chat.controller.LoginController      : Login method has been invoked!
+2016-11-15 13:08:12.689  INFO 1096 --- [http-nio-8080-exec-8] c.q.chat.controller.LoginController      : Login method has been invoked!
+2016-11-15 13:08:12.703  INFO 1096 --- [http-nio-8080-exec-9] c.q.chat.controller.LoginController      : Login method has been invoked!
+2016-11-15 13:08:17.524  INFO 1096 --- [http-nio-8080-exec-10] c.q.chat.controller.LoginController      : Login method has been invoked!
+2016-11-15 13:08:18.317  INFO 1096 --- [http-nio-8080-exec-2] c.q.chat.controller.LoginController      : Login method has been invoked!
+2016-11-15 13:08:22.418  INFO 1096 --- [http-nio-8080-exec-4] c.q.chat.controller.LoginController      : Login method has been invoked!
+2016-11-15 13:08:23.096  INFO 1096 --- [http-nio-8080-exec-6] c.q.chat.controller.LoginController      : Login method has been invoked!
+2016-11-15 13:08:35.387  INFO 1096 --- [http-nio-8080-exec-8] c.q.chat.controller.LoginController      : Login method has been invoked!
+2016-11-15 13:08:36.008  INFO 1096 --- [http-nio-8080-exec-10] c.q.chat.controller.LoginController      : Login method has been invoked!
+2016-11-15 13:08:54.234  INFO 1096 --- [http-nio-8080-exec-4] c.q.chat.controller.LoginController      : Login method has been invoked!
+2016-11-15 13:08:54.236  INFO 1096 --- [http-nio-8080-exec-5] c.q.chat.controller.LoginController      : Login method has been invoked!
+2016-11-15 13:09:51.653  INFO 1096 --- [RMI TCP Connection(2)-192.168.56.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2016-11-15 13:09:51.669  INFO 1096 --- [RMI TCP Connection(2)-192.168.56.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@269a0b37: startup date [Tue Nov 15 13:04:23 CST 2016]; root of context hierarchy
+2016-11-15 13:09:51.693  INFO 1096 --- [RMI TCP Connection(2)-192.168.56.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2016-11-15 13:09:51.699  INFO 1096 --- [RMI TCP Connection(2)-192.168.56.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'

@@ -1,172 +1,49 @@
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" 
- xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" lang="en">
-    <head>
-        <title>Coffee House - Login</title>
-        <meta name="keywords" content="Online Chatroom, Web Application, Chatroom Website"/>
-        <meta name="description" content="The login page for Coffee House"/>
-        <meta name="revised" content="Coffee House, 10/25/14"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
-        <style>
-            /* reset styles */
-            body, div, .container, section, h1, h2, h3, p, form, fieldset, label, input, button {
-                margin: 0;
-                padding: 0;
-                border: 0;
-            }
-
-            /* body and page containers */
-            body {
-                max-width: 700px;
-                background-color: beige;
-            }
-            .container {
-                border-radius: 10px;
-                position: absolute;
-                width: 90%;
-                top: 0;
-                left: 0;
-                margin: 0 auto;
-                border: 1px solid;
-                height: 500px;
-                box-shadow: 0 0 5px;
-            }
-             .fontAwesome {
-                font-family: Helvetica, FontAwesome, sans-serif;
-            }
-
-            /* headings */
-
-            /* form-content */
-            fieldset p#form-header {
-                position: relative;
-                bottom: 15px;
-                left: 5px;
-                font-size: 1.5em;
-                font-weight: bold;
-            }
-            form#login-form{
-                position: absolute;
-                top: 16%;
-                left: 23%;
-                border-radius: 30px;
-                box-shadow: 0 0 5px black;
-            }
-            fieldset {
-                width: 350px;
-                height: 250px;
-                border: 1px solid black;
-                padding: 5%;
-                background-color: chocolate;
-                border-radius: 30px;
-            }
-            fieldset input {
-                width: 100%;
-                height: 40px;
-                border-radius: 10px;
-            }/*
-            fieldset input:valid {
-            border: 1px solid green;
-            }*/
-
-            fieldset div#credentials {
-                padding-top: 4%;
-                padding-bottom: 1%;
-            }
-
-            input[type=text] {
-                margin-bottom: 6px;
-                background-color: darkgrey;
-                color: black;
-                padding-left: 5px;
-            } 
-            input[type=text]:focus, input[type=password]:focus {
-                box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-                outline: none;
-            } 
-            input[type=password] {
-                padding-left: 5px;
-                background-color: darkgrey;
-            }
-
-            input[type=submit] {
-                text-align: center;
-                font-weight: bold;
-                font-size: 1em;
-                margin-top: 10px;
-                padding: 3%; 
-                clear: both;
-                width: 70%;
-                margin-bottom: 20px;
-                background-color: bisque;
-                border-radius: 10px;
-                position: relative;
-                left: 50px;
-            }
-            #register-text {  
-                float: left;
-                width: 40%;
-                position: relative;
-                left: 20px;
-            }
-            #forgot-password-text {
-                position: relative;
-                bottom: 5px;
-                left: 40px;
-                float: right;
-                width: 50%;
-
-            }
-
-            input[type=submit]:hover, input[type=submit]:focus {
-                background-color: cornflowerblue;
-                box-shadow: 5px 5px 5px #888; 
-            }
-            input[type=submit]:active {
-                background-color: darkgreen;
-            }
-
-            a:link {
-                color: blue;
-                text-decoration: none;
-            }
-            a:visited {
-                color: blueviolet;
-            }
-            a:hover, a:focus {
-                color: cornsilk;
-            }
-            fieldset a:active {
-                color:black;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-        <div th:if="${param.error}">
-        	Invalid username or password
-        </div>
-        <div th:if="${param.logout}">
-        	You have been logged out.
-        </div>
-            <form id="login-form" method="post" action="index.html" th:action="@{/}">
-                <fieldset>
-                    <div id="credentials">
-                        <p id="form-header">Sign into Coffee House</p>
-                        <div id="username-div"><label><input class="fontAwesome" type="text" placeholder="Username" required="required" maxlength="25"/></label></div>
-                        <div id="password-div"><label><input class="fontAwesome" type="password" placeholder="Password" required="required" maxlength="15"/></label></div>
-                        <input type="submit" value="Sign in"/>
-                    </div>
-                    <div id="register-text">
-                        <p>New User?</p><label><a href="register.html" th:href="register.html">Create an Account</a></label></div>
-                    <div id="forgot-password-text">
-                        <p>Existing User?</p><label><a href="#">Forgot your Login<br />information?</a></label></div>
-                </fieldset>
-            </form>
-        </div>
-        <script>     
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	lang="en">
+<head>
+<title>Coffee House - Login</title>
+<meta name="description" content="The login page for Coffee House" />
+<meta name="revised" content="Coffee House, 10/25/14" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="../static/css/login.css"
+	th:href="@{/css/login.css}" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+</head>
+<body>
+	<div class="container">
+		<div th:if="${param.error}">Invalid username or password</div>
+		<form id="login-form" method="post" th:action="@{/}">
+			<fieldset>
+				<div id="credentials">
+					<p id="form-header">Sign into Coffee House</p>
+					<div id="username-div">
+						<label><input class="fontAwesome" type="text"
+							placeholder="Username" required="required" maxlength="25" /></label>
+					</div>
+					<div id="password-div">
+						<label><input class="fontAwesome" type="password"
+							placeholder="Password" required="required" maxlength="15" /></label>
+					</div>
+					<input type="submit" value="Sign in" />
+				</div>
+				<div id="register-text">
+					<p>New User?</p>
+					<label><a th:href="@{/register}">Create an Account</a></label>
+				</div>
+				<!-- <div id="forgot-password-text">
+					<p>Existing User?</p>
+					<label><a href="#">Forgot your Login<br />information?
+					</a></label>
+				</div> -->
+			</fieldset>
+		</form>
+	</div>
+	<script>     
         </script>
-    </body>
+</body>
 </html>
