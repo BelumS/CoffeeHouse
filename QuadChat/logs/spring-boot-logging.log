@@ -9522,3 +9522,7 @@ Verify the connector's configuration, identify and stop any process that's liste
 2016-11-15 20:00:13.450  INFO 10424 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
 2016-11-15 20:00:13.550  INFO 10424 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
 2016-11-15 20:00:13.561  INFO 10424 --- [restartedMain] com.quadcore.chat.ChatroomApplication    : Started ChatroomApplication in 15.779 seconds (JVM running for 18.667)
+2016-11-15 20:38:48.293  INFO 10424 --- [RMI TCP Connection(2)-192.168.56.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2016-11-15 20:38:48.295  INFO 10424 --- [RMI TCP Connection(2)-192.168.56.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651f9f3: startup date [Tue Nov 15 20:00:00 CST 2016]; root of context hierarchy
+2016-11-15 20:38:48.303  INFO 10424 --- [RMI TCP Connection(2)-192.168.56.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2016-11-15 20:38:48.324  INFO 10424 --- [RMI TCP Connection(2)-192.168.56.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
