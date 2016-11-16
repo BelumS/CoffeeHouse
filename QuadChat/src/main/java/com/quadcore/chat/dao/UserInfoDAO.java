@@ -1,4 +1,4 @@
-package com.quadcore.chat.repo;
+package com.quadcore.chat.dao;
 
 import com.quadcore.chat.model.UserInfo;
 
