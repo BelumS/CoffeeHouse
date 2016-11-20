@@ -1,6 +1,7 @@
 package com.quadcore.test.controller;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.*;
 import org.junit.Test;
@@ -9,14 +10,30 @@ import com.quadcore.chat.controller.RegisterController;
 
 public class RegisterControllerTest {
 	
+	private RegisterController controller;
+	
 	@Test
-	public void testHomePage() throws Exception
+	public void testRegistrationPage() throws Exception
 	{
-		RegisterController controller = new RegisterController();
+		controller = new RegisterController();
 		MockMvc mockMvc = standaloneSetup(controller).build();
 		mockMvc.perform(get("/register"))
 				.andExpect(view().name("register"));
+		
+		mockMvc.perform(post("/register"))
+		.andExpect(view().name("registration-test"))
+		.andDo(print());
 			
+	}
+	
+	@Test
+	public void testRegistrationForm() throws Exception
+	{
+		controller = new RegisterController();
+		MockMvc mockMvc = standaloneSetup(controller).build();
+		mockMvc.perform(post("/register"))
+		.andExpect(view().name("registration-test"))
+		.andDo(print()); 
 	}
 
 }

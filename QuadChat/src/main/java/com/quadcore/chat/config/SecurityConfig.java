@@ -40,24 +40,30 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.and().logout().logoutUrl("/logout").logoutSuccessUrl("/logout");	
 			*/
 		
-		http
-			.authorizeRequests()
-				.antMatchers("/register").permitAll()
-				.anyRequest().authenticated()
-				.and()
-			.formLogin()
-				.loginPage("/login")
-				.permitAll()
-				.and()
-			.logout().permitAll();
-			
+		http.authorizeRequests()
+			.antMatchers("/").access("hasAnyRole('USER, ADMIN')")
+			.antMatchers("/register").permitAll()
+			.anyRequest().authenticated()
+			.and()
+		.formLogin()
+			.loginPage("/login")
+			.usernameParameter("user")
+			.passwordParameter("password")
+			.failureUrl("/login?error")
+			.permitAll()
+			.and()
+		.logout()
+			.logoutUrl("/logout")
+			.permitAll();
 	}
 	
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception
 	{
 		auth.inMemoryAuthentication()
-			.withUser("user").password("password").roles("USER");
+			.withUser("user").password("password").roles("USER")
+			.and()
+			.withUser("admin").password("password").roles("USER", "ADMIN");
 	}
 	
 }

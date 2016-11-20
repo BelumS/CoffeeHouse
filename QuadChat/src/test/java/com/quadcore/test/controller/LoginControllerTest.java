@@ -1,6 +1,7 @@
 package com.quadcore.test.controller;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.*;
 import org.junit.Test;
@@ -9,14 +10,28 @@ import com.quadcore.chat.controller.LoginController;
 
 public class LoginControllerTest {
 	
-	@Test
-	public void testHomePage() throws Exception
+	private LoginController controller;
+	
+	/*@Test
+	public void testLoginPage() throws Exception
 	{
-		LoginController controller = new LoginController();
+		controller = new LoginController();
 		MockMvc mockMvc = standaloneSetup(controller).build();
 		mockMvc.perform(get("/login"))
-				.andExpect(view().name("login.html"));
-			
+				.andExpect(view().name("login"));	
+	}*/
+	
+	@Test
+	public void testLoginForm() throws Exception
+	{
+		controller = new LoginController();
+		MockMvc mockMvc = standaloneSetup(controller).build();
+
+		mockMvc.perform(post("/login"))
+			.andExpect(view().name("redirect:/"))
+			.andExpect(redirectedUrl("/"))
+			.andExpect(status().isFound())
+			.andDo(print());
 	}
 
 }

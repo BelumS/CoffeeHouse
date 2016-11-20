@@ -7,21 +7,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="../static/css/login.css" th:href="@{css/login.css}"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
 </head>
 <body>
 	<div class="container">
-		<div th:if="${param.error}">Invalid username or password</div>
-		<form id="login-form" method="post" th:action="@{/}">
+		<!-- <div th:if="${param.error}">Invalid username or password</div> -->
+		<form id="login-form" method="post" th:action="@{/login}">
 			<fieldset>
 				<div id="credentials">
 					<p id="form-header">Sign into Coffee House</p>
 					<div id="username-div">
-						<label><input class="fontAwesome" type="text"
+						<label><input type="text"
 							placeholder="Username" required="required" maxlength="25" /></label>
 					</div>
 					<div id="password-div">
-						<label><input class="fontAwesome" type="password"
+						<label><input type="password"
 							placeholder="Password" required="required" maxlength="15" /></label>
 					</div>
 					<input type="submit" value="Sign in" />
@@ -32,13 +31,13 @@
 				</div>
 				<!-- <div id="forgot-password-text">
 					<p>Existing User?</p>
-					<label><a href="#">Forgot your Login<br />information?
+					<label><a href="">Forgot your Login<br />information?
 					</a></label>
 				</div> -->
 			</fieldset>
 		</form>
 	</div>
 	<script>     
-        </script>
+    </script>
 </body>
 </html>
