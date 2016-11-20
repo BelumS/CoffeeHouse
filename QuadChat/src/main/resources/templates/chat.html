@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
     <head>
-        <title>Coffee House - Admin</title>
+        <title>Coffee House Chat</title>
         <link rel="stylesheet" th:href="@{css/main.css}"/>
     </head>
     <body>
@@ -14,26 +14,30 @@
                 </h2>
             </noscript>
             <header>
-                <h1>Welcome to the Coffee House!</h1>
+                <h1>Welcome to the Chatroom!</h1>
             </header>
             
-            <div sec:authorize="isAuthenticated()">
-            	Hello, <span sec:authentication="name">someone</span>
-            </div>
-			
             <nav class="site-nav">
                 <ul>
+                	<li><a th:href="@{/}">Home</a></li>
                     <li><a th:href="@{/login}">Login</a></li>
                     <li><a th:href="@{/register}">Register</a></li>
-                    <li><a th:href="#">Lobbies</a></li>
-                    <li><a th:href="#">Settings</a></li>
-                    <li><span sec:authorize-url="admin"><a th:href="@{/admin}">Admin</a></span></li>
+                    <li><a th:href="@{/chat}">Chatroom</a></li>
+                   <!--   <li><a th:href="">Lobbies</a></li>
+                    <li><a th:href="">Settings</a></li>-->
+                   <!--<li><span sec:authorize-url="admin"><a th:href="@{/admin}">Admin</a></span></li> -->
                 </ul>
-                    <form th:action="@{/logout}" method="post">
+                    <form th:action="@{/login?logout}" method="post">
                    	 <input type="submit" value="Log Out"/>
                     </form>
             </nav>
-     
+
+            <section id="chat-box-outer">
+                <h6>Reserved for the Chatroom!</h6>
+                <div id="chat-box-inner">
+                </div>
+            </section>
+
             <footer class="clear">Coffee House &copy; FALL 2016</footer>
         </div>
     </body>

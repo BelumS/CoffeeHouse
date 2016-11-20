@@ -115,6 +115,15 @@ input[type=submit] {
 	width: 50%;
 }
 
+form.alert-invalid{
+	
+}
+
+form.alert-logout {
+	
+}
+
+
 input[type=submit]:hover, input[type=submit]:focus {
 	background-color: cornflowerblue;
 	box-shadow: 5px 5px 5px #888;

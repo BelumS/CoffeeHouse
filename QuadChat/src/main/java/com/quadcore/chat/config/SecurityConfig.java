@@ -41,20 +41,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			*/
 		
 		http.authorizeRequests()
-			.antMatchers("/").access("hasAnyRole('USER, ADMIN')")
-			.antMatchers("/register").permitAll()
-			.anyRequest().authenticated()
+			.antMatchers("/", "/chat").access("hasAnyRole('USER, ADMIN')")
+			.antMatchers("/register", "/static/**").permitAll()
+			.anyRequest().fullyAuthenticated()
 			.and()
-		.formLogin()
-			.loginPage("/login")
-			.usernameParameter("user")
-			.passwordParameter("password")
+		.formLogin().loginPage("/login")
+			.usernameParameter("username").passwordParameter("password")
 			.failureUrl("/login?error")
 			.permitAll()
 			.and()
 		.logout()
-			.logoutUrl("/logout")
-			.permitAll();
+			.logoutUrl("/login?logout")
+		.and()
+			.exceptionHandling().accessDeniedPage("/errors/403");
 	}
 	
 	@Autowired

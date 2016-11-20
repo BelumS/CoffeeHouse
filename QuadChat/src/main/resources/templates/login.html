@@ -1,27 +1,29 @@
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	lang="en">
 <head>
 <title>Coffee House - Login</title>
-<meta name="description" content="The Login Page for Coffee House"/>
-<meta name="revised" content="Coffee House, 11/15/16"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="The Login Page for Coffee House" />
+<meta name="revised" content="Coffee House, 11/20/16" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" href="../static/css/login.css" th:href="@{css/login.css}"/>
+<link rel="stylesheet" th:href="@{css/login.css}" />
 </head>
 <body>
 	<div class="container">
-		<!-- <div th:if="${param.error}">Invalid username or password</div> -->
 		<form id="login-form" method="post" th:action="@{/login}">
 			<fieldset>
 				<div id="credentials">
 					<p id="form-header">Sign into Coffee House</p>
 					<div id="username-div">
-						<label><input type="text"
-							placeholder="Username" required="required" maxlength="25" /></label>
+						<label><input type="text" name="username" placeholder="Username"
+							required="required" maxlength="25" /></label>
 					</div>
 					<div id="password-div">
-						<label><input type="password"
-							placeholder="Password" required="required" maxlength="15" /></label>
+						<label><input type="password" name="password" placeholder="Password"
+							required="required" maxlength="15" /></label>
 					</div>
 					<input type="submit" value="Sign in" />
 				</div>
@@ -35,6 +37,10 @@
 					</a></label>
 				</div> -->
 			</fieldset>
+			<div class="alert-invalid" th:if="${param.error != null}">
+				Invalid username or password</div>
+			<div class="alert-logout" th:if="${param.logout != null}">You
+				have been logged out!</div>
 		</form>
 	</div>
 	<script>     
