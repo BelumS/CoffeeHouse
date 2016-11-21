@@ -1,34 +1,44 @@
 package com.quadcore.chat.controller;
 
-import java.util.Optional;
+import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+import com.quadcore.chat.dao.UserInfoDAO;
+import com.quadcore.chat.model.LoginForm;
 
-/*Does not work atm.. */
 @Controller
 public class LoginController {
+	
+	@Autowired
+	private UserInfoDAO userInfoDAO;
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@GetMapping("/login")
-	public ModelAndView login(@RequestParam Optional<String> error)
+	public String displayLoginPage(LoginForm loginForm)
 	{
-		logger.debug("Getting login page, error={}", error);
-		//logger.info("Login method has been invoked!");
-		//logger.warn("This is a warning message.");
-		//logger.error("This is an error message.");
-		return new ModelAndView("login", "error", error);
+		logger.debug("Getting login page");
+		return "/login";
 	}
 	
 	@PostMapping("/login")
-	public String loginSuccess()
+	public String executeLogin(@Valid LoginForm loginForm, BindingResult bindingResult)
 	{
+		if(bindingResult.hasErrors()) {
+			return "/login?error";
+		}
+		
+		if(!userInfoDAO.authenticate(
+				loginForm.getUsername(), loginForm.getPassword())) {
+			return "/login?error";
+		}
+		
 		return "redirect:/";
 	}
 }

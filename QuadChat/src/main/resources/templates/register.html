@@ -1,57 +1,192 @@
 <!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-    <head>
-        <title>Coffee House - Register</title>
-        <meta name="description" content="The registration page for Coffee House"/>
-        <meta name="revised" content="Coffee House, 11/15/16"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-        <link rel="stylesheet" th:href="@{css/register.css}"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"/>
-    </head>
-    <body>
-        <div class="container">
-            <h2>Create an Account</h2>
-            <hr id="horiz-line"/>
-            <form id="registration-form" method="post" th:action="@{/registration-test}">
-                <div id="register">
-                    <p>
-                        <label>Enter your Username</label><br />
-                        <input id="username" class="fontAwesome fixed-width" type="text" maxlength="25" placeholder="&#xf007; coffeeusername1337"/>
-                    </p>
-                    <p>
-                        <label>Enter your Email</label><br />
-                        <input id="email" class="fontAwesome fixed-width" type="email" maxlength="25" placeholder="&#xf0e0; coffeebeans@email.net"/>
-                    </p>
-                    <p>
-                        <label>Enter your Password</label><br />
-                        <input id="password" onkeyup="checkCapsWarning(event)"
-                               onfocus="checkCapsWarning(event)"
-                               onblur="removeCapsWarning()"
-                               class="fontAwesome fixed-width" type="password" maxlength="15" placeholder="&#xf023; mypassword"/>
-                    </p>    
-                    <div id="caps" style="display:none;color:red">
-                        Warning: Caps Lock is on!
-                    </div>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<title>Coffee House - Register</title>
+<meta name="description"
+	content="The registration page for Coffee House" />
+<meta name="revised" content="Coffee House, 11/15/16" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<!--<link rel="stylesheet" th:href="@{css/register.css}"/> -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+<style>
+/* reset styles */
+/* body, div, h1, h2, h3, p, form, fieldset, label, input, button {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            }*/
 
-                    <p>
-                        <label>Confirm your Password</label><br />
-                        <input id="confirm-password"
-                               onkeyup="checkCapsWarning(event)"
-                               onfocus="checkCapsWarning(event)"
-                               onblur="removeCapsWarning()" class="fontAwesome fixed-width" 
-                               type="password" maxlength="15" placeholder="&#xf023; mypassword"/>
-                    </p>
-                    <p>
-                        <input id="submit-btn" type="submit" value="CREATE"/>
-                    </p>
-                </div>
-            </form>
-            <p>Already a User?<br />
-                <a th:href="@{/login}">Back to Login</a></p>
-        </div>
-        <script src="caps-lock.js"></script>
-        <script>
+/* hyperlinks */
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	
+}
+
+a:active {
+	
+}
+
+a:hover, a:focus {
+	color: cadetblue;
+}
+
+/* body and page containers */
+body {
+	border: 1px solid;
+	background-color: beige;
+	box-shadow: 0 0 5px;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 500px;
+}
+
+.fontAwesome {
+	font-family: Helvetica, FontAwesome, sans-serif;
+}
+
+.fixed-width {
+	width: 70%;
+	clear: both;
+	border-radius: 3px;
+	background-color: beige;;
+	color: black;
+	margin-left: 7%;
+}
+
+/* headings */
+h2 {
+	text-align: center;
+	font-size: 200%;
+	color: cadetblue;
+	text-shadow: 0 0 5px gray;
+}
+
+hr {
+	width: 70%;
+	margin-bottom: 6%;
+}
+
+/* form-content */
+form {
+	text-align: left;
+	border: 0;
+	border-radius: 30px;
+	box-shadow: 5px 5px 15px gray;
+	background-color: chocolate;
+}
+
+#register {
+	padding-top: 20px;
+}
+
+#register p {
+	margin-left: 5%;
+}
+
+input {
+	margin: 5px;
+	padding: 1%;
+}
+
+input[type=text] {
+	
+}
+
+input[type=email] {
+	
+}
+
+#password-div {
+	float: left;
+	width: 45%;
+}
+
+#confirm-div {
+	float: left;
+	width: 45%;
+}
+
+input:focus {
+	border: 0;
+	outline: none;
+	box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+input[type=submit] {
+	position: relative;
+	left: 34%;
+	width: 45%;
+	border-radius: 10px;
+	font-weight: bold;
+	background-color: cornflowerblue;
+	outline: none;
+	border: 1px dashed;
+	margin-bottom: 20px;
+}
+
+input[type=submit]:hover, input[type=submit]:focus {
+	box-shadow: 0 0 5px blue;
+}
+
+input[type=submit]:active {
+	background-color: cadetblue;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<h2>Create an Account</h2>
+		<hr id="horiz-line" />
+		<form id="registration-form" method="post"
+			th:action="@{/registration-test}">
+			<div id="register">
+				<p>
+					<label>Enter your Username</label><br /> <input id="username"
+						class="fontAwesome fixed-width" type="text" maxlength="25"
+						placeholder="&#xf007; coffeeusername1337" />
+				</p>
+				<p>
+					<label>Enter your Email</label><br /> <input id="email"
+						class="fontAwesome fixed-width" type="email" maxlength="25"
+						placeholder="&#xf0e0; coffeebeans@email.net" />
+				</p>
+				<p>
+					<label>Enter your Password</label><br /> <input id="password"
+						onkeyup="checkCapsWarning(event)"
+						onfocus="checkCapsWarning(event)" onblur="removeCapsWarning()"
+						class="fontAwesome fixed-width" type="password" maxlength="15"
+						placeholder="&#xf023; mypassword" />
+				</p>
+				<div id="caps" style="display: none; color: red">Warning: Caps
+					Lock is on!</div>
+
+				<p>
+					<label>Confirm your Password</label><br /> <input
+						id="confirm-password" onkeyup="checkCapsWarning(event)"
+						onfocus="checkCapsWarning(event)" onblur="removeCapsWarning()"
+						class="fontAwesome fixed-width" type="password" maxlength="15"
+						placeholder="&#xf023; mypassword" />
+				</p>
+				<p>
+					<input id="submit-btn" type="submit" value="CREATE" />
+				</p>
+			</div>
+		</form>
+		<p>
+			Already a User?<br /> <a th:href="@{/login}">Back to Login</a>
+		</p>
+	</div>
+	<script src="caps-lock.js"></script>
+	<script>
             function checkCapsWarning() {
                 document.getElementById('caps').style.display = capsLockEnabled ? 'block' : 'none';
             }
@@ -59,8 +194,8 @@
             function removeCapsWarning() {
                 document.getElementById('caps').style.display = 'none';
             }
-        </script>      
-        <!--  <script>
+        </script>
+	<!--  <script>
 //Form validation code will come here.
 var username = document.getElementById('username');
 
@@ -71,5 +206,5 @@ input.onblur =
 alert('Ouch! Stop poking me!');
 }*/
 </script> -->
-    </body>
+</body>
 </html>

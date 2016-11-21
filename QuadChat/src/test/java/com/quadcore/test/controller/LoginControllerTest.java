@@ -12,16 +12,18 @@ public class LoginControllerTest {
 	
 	private LoginController controller;
 	
-	/*@Test
+	@Test
 	public void testLoginPage() throws Exception
 	{
 		controller = new LoginController();
 		MockMvc mockMvc = standaloneSetup(controller).build();
 		mockMvc.perform(get("/login"))
-				.andExpect(view().name("login"));	
-	}*/
+				.andExpect(view().name("login"))
+				.andExpect(status().isFound())
+				.andDo(print());
+	}
 	
-	@Test
+	/*@Test
 	public void testLoginForm() throws Exception
 	{
 		controller = new LoginController();
@@ -32,6 +34,6 @@ public class LoginControllerTest {
 			.andExpect(redirectedUrl("/"))
 			.andExpect(status().isFound())
 			.andDo(print());
-	}
+	}*/
 
 }

@@ -18,11 +18,8 @@ public class RegisterControllerTest {
 		controller = new RegisterController();
 		MockMvc mockMvc = standaloneSetup(controller).build();
 		mockMvc.perform(get("/register"))
-				.andExpect(view().name("register"));
-		
-		mockMvc.perform(post("/register"))
-		.andExpect(view().name("registration-test"))
-		.andDo(print());
+				.andExpect(view().name("register"))
+				.andDo(print());
 			
 	}
 	
