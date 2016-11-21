@@ -150,17 +150,17 @@ input[type=submit]:active {
 			th:action="@{/registration-test}">
 			<div id="register">
 				<p>
-					<label>Enter your Username</label><br /> <input id="username"
+					<label>Enter your Username</label><br /> <input id="username" name="username"
 						class="fontAwesome fixed-width" type="text" maxlength="25"
 						placeholder="&#xf007; coffeeusername1337" />
 				</p>
 				<p>
-					<label>Enter your Email</label><br /> <input id="email"
+					<label>Enter your Email</label><br /> <input id="email" name="email"
 						class="fontAwesome fixed-width" type="email" maxlength="25"
 						placeholder="&#xf0e0; coffeebeans@email.net" />
 				</p>
 				<p>
-					<label>Enter your Password</label><br /> <input id="password"
+					<label>Enter your Password</label><br /> <input id="password" name="password"
 						onkeyup="checkCapsWarning(event)"
 						onfocus="checkCapsWarning(event)" onblur="removeCapsWarning()"
 						class="fontAwesome fixed-width" type="password" maxlength="15"
@@ -171,7 +171,7 @@ input[type=submit]:active {
 
 				<p>
 					<label>Confirm your Password</label><br /> <input
-						id="confirm-password" onkeyup="checkCapsWarning(event)"
+						id="confirm-password" name="password" onkeyup="checkCapsWarning(event)"
 						onfocus="checkCapsWarning(event)" onblur="removeCapsWarning()"
 						class="fontAwesome fixed-width" type="password" maxlength="15"
 						placeholder="&#xf023; mypassword" />
