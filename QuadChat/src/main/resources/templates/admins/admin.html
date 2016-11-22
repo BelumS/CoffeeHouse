@@ -29,7 +29,7 @@
                     <li><a th:href="#">Settings</a></li> -->
                     <li sec:authorize="hasRole('ROLE_ADMIN')" th:text="Admin"><a th:href="@{/admins/admin}"></a></li>
                 </ul>
-                    <form th:action="@{/login?logout}" method="post">
+                    <form th:action="@{/logout}" method="post">
                    	 <input type="submit" value="Log Out"/>
                     </form>
             </nav>
