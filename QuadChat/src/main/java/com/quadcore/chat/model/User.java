@@ -70,14 +70,5 @@ public class User {
 		this.password = password;
 	}
 	
-	/*public String getPasswordConfirm()
-	{
-		return passwordConfirm;
-	}
-	public void setPasswordConfirm(String passwordConfirm)
-	{
-		this.passwordConfirm = passwordConfirm;
-	}*/
-	
 	
 }
