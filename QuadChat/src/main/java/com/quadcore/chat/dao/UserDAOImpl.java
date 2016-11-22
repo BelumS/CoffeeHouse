@@ -7,17 +7,17 @@ import java.util.Objects;
 
 import org.springframework.stereotype.Service;
 
-import com.quadcore.chat.model.UserInfo;
+import com.quadcore.chat.model.User;
 
 /**
  * @author BelumEx
  *
  */
 @Service
-public class UserInfoDAOImpl implements UserInfoDAO {
+public class UserDAOImpl implements UserDAO {
 
 	/* (non-Javadoc)
-	 * @see com.quadcore.chat.dao.UserInfoDAO#authenticate(java.lang.String, java.lang.String)
+	 * @see com.quadcore.chat.dao.UserDAO#authenticate(java.lang.String, java.lang.String)
 	 */
 	@Override
 	public boolean authenticate(String username, String password) 
@@ -27,19 +27,19 @@ public class UserInfoDAOImpl implements UserInfoDAO {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.quadcore.chat.dao.UserInfoDAO#changePassword(com.quadcore.chat.model.UserInfo, java.lang.String)
+	 * @see com.quadcore.chat.dao.UserDAO#changePassword(com.quadcore.chat.model.User, java.lang.String)
 	 */
 	@Override
-	public void changePassword(UserInfo userInfo, String password) {
+	public void changePassword(User user, String password) {
 		// TODO Auto-generated method stub
 
 	}
 
 	/* (non-Javadoc)
-	 * @see com.quadcore.chat.dao.UserInfoDAO#changeEmail(com.quadcore.chat.model.UserInfo, java.lang.String)
+	 * @see com.quadcore.chat.dao.UserDAO#changeEmail(com.quadcore.chat.model.User, java.lang.String)
 	 */
 	@Override
-	public void changeEmail(UserInfo userInfo, String email) {
+	public void changeEmail(User user, String email) {
 		// TODO Auto-generated method stub
 
 	}

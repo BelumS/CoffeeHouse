@@ -9,14 +9,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import com.quadcore.chat.dao.UserInfoDAO;
+import com.quadcore.chat.dao.UserDAO;
 import com.quadcore.chat.model.LoginForm;
 
 @Controller
 public class LoginController {
 	
 	@Autowired
-	private UserInfoDAO userInfoDAO;
+	private UserDAO userDAO;
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -34,7 +34,7 @@ public class LoginController {
 			return "login?error";
 		}
 		
-		if(!userInfoDAO.authenticate(
+		if(!userDAO.authenticate(
 				loginForm.getUsername(), loginForm.getPassword())) {
 			return "login?error";
 		}
