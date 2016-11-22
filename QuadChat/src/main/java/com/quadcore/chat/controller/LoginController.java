@@ -24,22 +24,28 @@ public class LoginController {
 	public String displayLoginPage(LoginForm loginForm)
 	{
 		logger.debug("Getting login page");
-		return "/login";
+		return "login";
 	}
 	
 	@PostMapping("/login")
 	public String executeLogin(@Valid LoginForm loginForm, BindingResult bindingResult)
 	{
 		if(bindingResult.hasErrors()) {
-			return "/login?error";
+			return "login?error";
 		}
 		
 		if(!userInfoDAO.authenticate(
 				loginForm.getUsername(), loginForm.getPassword())) {
-			return "/login?error";
+			return "login?error";
 		}
 		
 		return "redirect:/";
+	}
+	
+	@PostMapping("/logout")
+	public String executeLogout()
+	{
+		return "/login?logout";
 	}
 }
 

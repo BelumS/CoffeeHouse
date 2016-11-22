@@ -10,36 +10,37 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception 
 	{	
 		http.authorizeRequests()
-			.antMatchers("/login", "/register").anonymous()
-			.antMatchers("/", "/user/chat").access("hasRole('USER')")
-			.antMatchers("/admin").access("hasRole('ADMIN')")
+		.antMatchers("/register").permitAll()
+		.antMatchers("/", "/chat").access("hasAnyRole('USER', 'ADMIN')")
+		.antMatchers("/admins/**").access("hasRole('ADMIN')")
 			.and()
-		.formLogin().loginPage("/login")
-			.usernameParameter("username").passwordParameter("password")
-            .defaultSuccessUrl("/", true)
-			.failureUrl("/login?error")
-			.permitAll()
+		.formLogin()
+		.loginPage("/login")
+		//.defaultSuccessUrl("/", true)
+		.failureUrl("/login?error")
+		.permitAll()
 			.and()
 		.logout()
-			.logoutUrl("/login?logout")
-			.logoutSuccessUrl("/login?logout")
-		.and()
-			.exceptionHandling().accessDeniedPage("/errors/403");
+		.logoutUrl("/logout")
+		.logoutSuccessUrl("/login?logout")
+		.permitAll()
+			.and()
+		.exceptionHandling().accessDeniedPage("/errors/403");
 	}
 	
 	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception
+	protected void configureGlobal(AuthenticationManagerBuilder auth) throws Exception 
 	{
 		auth.inMemoryAuthentication()
 			.withUser("user").password("password").roles("USER")
-			.and()
-			.withUser("admin").password("password").roles("USER", "ADMIN");
+		.and()
+			.withUser("admin").password("password").roles("USER, ADMIN");
 	}
+
 	
 }
