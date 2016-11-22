@@ -13,10 +13,10 @@ public class RegisterController {
 		return "register";
 	}
 	
-	@PostMapping("/register")
+	/*@PostMapping("/register")
 	public String registeredCredentials()
 	{
-		return "registration-test";
-	}
+		return "register";
+	}*/
 	
 }
