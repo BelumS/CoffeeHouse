@@ -16,18 +16,20 @@
             <header>
                 <h1>Welcome to the Coffee House!</h1>
                 <!-- <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1> -->
+                <div sec:authorize="isAuthenticated()">
+            	Hello, <span sec:authentication="name">someone</span>
+            </div>
             </header>
             
             <nav class="site-nav">
                 <ul>
-                	<li><a th:href="@{/}">Home</a></li>
-                    <li><a th:href="@{/chat}">Chatroom</a></li>
-                    <li><a th:href="@{/login}">Login</a></li>
+                	<li><a href="user/index.html" th:href="@{/}">Home</a></li>
+                    <li><a href="user/chat.html" th:href="@{/user/chat}">Chatroom</a></li>
                    <!--   <li><a th:href="">Lobbies</a></li>
                     <li><a th:href="">Settings</a></li>-->
-                   <li><sec:authorize access="hasRole('ADMIN')"><a href="admin.html" th:href="@{/admin}">Admin</a></sec:authorize></li>
+                   <li><sec:authorize access="hasRole('ADMIN')"><a th:href="@{/admin}">Admin</a></sec:authorize></li>
                 </ul>
-                    <form th:action="@{/login?logout}" method="post">
+                    <form th:action="@{/login?logout}" method="get">
                    	 <input type="submit" value="Log Out"/>
                     </form>
             </nav>

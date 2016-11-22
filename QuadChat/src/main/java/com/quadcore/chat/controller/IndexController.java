@@ -11,7 +11,7 @@ public class IndexController {
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	@GetMapping("/")
+	@GetMapping({"/", "/home"})
 	public String index()
 	{
 		logger.debug("Getting home page");

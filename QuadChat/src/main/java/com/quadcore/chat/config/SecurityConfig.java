@@ -16,14 +16,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception 
 	{	
 		http.authorizeRequests()
-			.antMatchers("/login", "/register", "/registration-test").permitAll()
-			.antMatchers("/","/chat").access("hasRole('USER')")
+			.antMatchers("/login", "/register").anonymous()
+			.antMatchers("/", "/user/chat").access("hasRole('USER')")
 			.antMatchers("/admin").access("hasRole('ADMIN')")
 			.and()
 		.formLogin().loginPage("/login")
 			.usernameParameter("username").passwordParameter("password")
-            .defaultSuccessUrl("/chat")
-			.failureUrl("/login?error=true")
+            .defaultSuccessUrl("/", true)
+			.failureUrl("/login?error")
 			.permitAll()
 			.and()
 		.logout()

@@ -10,7 +10,7 @@ public class ChatController {
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	@GetMapping("/chat")
+	@GetMapping("/user/chat")
 	public String getChatPage()
 	{
 		logger.debug("Getting Chatroom page");

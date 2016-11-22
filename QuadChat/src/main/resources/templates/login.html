@@ -165,19 +165,17 @@ fieldset a:active {
 </head>
 <body>
 	<div class="container">
-		<form id="login-form" method="post" th:object="${loginForm}" action="/login.html" th:action="@{/login}">
+		<form id="login-form" method="post" th:object="${loginForm}" th:action="@{/login}">
 			<fieldset>
 				<div id="credentials">
 					<p id="form-header">Sign into Coffee House</p>
 					<div id="username-div">
-						<input type="text" name="username" th:value="*{username}" placeholder="Username"
+						<input type="text" name="username" placeholder="Username"
 							required="required" maxlength="30" />
-							<span th:errors="*{username}">Invalid username</span>
 					</div>
 					<div id="password-div">
-						<input type="password" name="password" th:value="*{password}" placeholder="Password"
+						<input type="password" name="password" placeholder="Password"
 							required="required" maxlength="20" />
-							<span th:errors="*{password}">Invalid password</span>
 					</div>
 					<input type="submit" value="Sign in" />
 				</div>
@@ -191,10 +189,10 @@ fieldset a:active {
 					</a></label>
 				</div> -->
 			</fieldset>
-			<!--<div class="alert-invalid" th:if="${param.error != null}">
+			<div class="alert-invalid" th:if="${param.error != null}">
 				Invalid username or password</div>
 			<div class="alert-logout" th:if="${param.logout != null}">You
-				have been logged out!</div> -->
+				have been logged out!</div>
 		</form>
 	</div>
 	<script>     
