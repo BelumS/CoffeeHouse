@@ -15,8 +15,8 @@ import com.quadcore.chat.model.LoginForm;
 @Controller
 public class LoginController {
 	
-	@Autowired
-	private UserDAO userDAO;
+	//@Autowired
+	//private UserDAO userDAO;
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -34,10 +34,10 @@ public class LoginController {
 			return "login?error";
 		}
 		
-		if(!userDAO.authenticate(
+		/*if(!userDAO.authenticate(
 				loginForm.getUsername(), loginForm.getPassword())) {
 			return "login?error";
-		}
+		}*/
 		
 		return "redirect:/";
 	}

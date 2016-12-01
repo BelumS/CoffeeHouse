@@ -18,36 +18,50 @@ public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private Long id;
 	
 	@NotNull
 	private String username;
 	
 	@NotNull
+	private String email;
+	
+	//@NotNull
 	private String password;
+	
+	//@NotNull
+	private boolean enabled;
+	
 	//private String passwordConfirm;
-	//private Set<Role> roles;
+	//private Set<UserRole> roles;
 	
 	//Public methods
 	public User(){}
 	
-	public User(long id)
+	public User(Long id)
 	{
 		this.id = id;
 	}
 	
-	public User(String username, String password)
+	public User(String username, String email)
 	{
 		this.username = username;
+		this.email = email;
+	}
+	
+	public User(String username, String email, String password)
+	{
+		this.username = username;
+		this.email = email;
 		this.password = password;
 	}
 	
 	//Getters and setters
-	public long getId()
+	public Long getId()
 	{
 		return id;
 	}
-	public void setId(long id)
+	public void setId(Long id)
 	{
 		this.id = id;
 	}
@@ -61,6 +75,15 @@ public class User {
 		this.username = username;
 	}
 	
+	public String getEmail()
+	{
+		return email;
+	}
+	public void setEmail(String email)
+	{
+		this.email = email;
+	}
+			
 	public String getPassword()
 	{
 		return password;
@@ -70,5 +93,13 @@ public class User {
 		this.password = password;
 	}
 	
-	
+	public boolean isEnabled()
+	{
+		return enabled;
+	}
+	public void setEnabled(boolean enabled)
+	{
+		this.enabled = enabled;
+	}
+
 }

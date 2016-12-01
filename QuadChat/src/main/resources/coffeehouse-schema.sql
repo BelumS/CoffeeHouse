@@ -1,12 +1,13 @@
 use coffeehouse;
 
-#drop table User_Roles;
-#drop table Users;
+drop table User_Roles;
+drop table Users;
 
 #--Create User
 create table Users(
 	user_id int(11) primary key auto_increment,
 	username varchar(36) unique not null,
+	user_email varchar(40) unique not null,
 	password varchar(20) not null,
 	enabled tinyint(1) not null default 1
 );
@@ -22,8 +23,8 @@ create table User_Roles (
 alter table User_Roles auto_increment = 1001;
 
 #--insert Users
-insert into Users(username, password, enabled) values('coffeeadmin', 'coffeehouse', true);
-insert into Users(username, password, enabled) values('coffeeuser1','12345', true);
+insert into Users(username, user_email, password, enabled) values('coffeeadmin', 'coffeeadmin@gmail.com', 'coffeehouse', true);
+insert into Users(username, user_email, password, enabled) values('coffeeuser1', 'beans@yahoo.com', '12345', true);
  
 #--insert User Roles
 insert into User_Roles(username, user_role) values('coffeeadmin', 'ROLE_USER');

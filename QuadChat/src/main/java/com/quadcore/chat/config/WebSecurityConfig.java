@@ -41,14 +41,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	protected void configureGlobal(AuthenticationManagerBuilder auth) throws Exception 
 	{
-		/*auth.inMemoryAuthentication()
+		auth.inMemoryAuthentication()
 			.withUser("user").password("password").roles("USER")
 		.and()
-			.withUser("admin").password("password").roles("ADMIN");*/
+			.withUser("admin").password("password").roles("ADMIN");
 		
-		auth.jdbcAuthentication().dataSource(dataSource)
+		/*auth.jdbcAuthentication().dataSource(dataSource)
 			.usersByUsernameQuery("")
-			.authoritiesByUsernameQuery("");
+			.authoritiesByUsernameQuery("");*/
 	}
 
 	
