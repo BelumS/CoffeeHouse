@@ -1,7 +1,7 @@
 #create database if not exists 'coffeehouse';
 use coffeehouse;
 
-/*#drop table if exists User_Roles;
+#drop table if exists User_Roles;
 #drop table if exists Users;
 #drop table if exists Roles;
 
