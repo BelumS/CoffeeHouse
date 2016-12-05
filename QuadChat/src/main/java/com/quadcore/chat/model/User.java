@@ -1,7 +1,6 @@
 package com.quadcore.chat.model;
 
-import java.util.Set;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,27 +8,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.annotations.Columns;
-
 //Models a User's information
 @Entity
 @Table(name = "Users")
 public class User {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	
-	@NotNull
+	private Long userId;
 	private String username;
-	
-	@NotNull
 	private String email;
-	
-	//@NotNull
 	private String password;
-	
-	//@NotNull
 	private boolean enabled;
 	
 	//private String passwordConfirm;
@@ -37,35 +24,34 @@ public class User {
 	
 	//Public methods
 	public User(){}
-	
-	public User(Long id)
+	public User(Long userId)
 	{
-		this.id = id;
+		this.userId = userId;
 	}
 	
-	public User(String username, String email)
-	{
-		this.username = username;
-		this.email = email;
-	}
-	
-	public User(String username, String email, String password)
+	public User(String username, String email, String password, boolean enabled)
 	{
 		this.username = username;
 		this.email = email;
 		this.password = password;
+		this.enabled = enabled;
 	}
 	
 	//Getters and setters
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "user_id")
 	public Long getId()
 	{
-		return id;
+		return userId;
 	}
-	public void setId(Long id)
+	public void setId(Long userId)
 	{
-		this.id = id;
+		this.userId = userId;
 	}
 	
+	@NotNull
+	@Column(name = "username", unique = true, length = 36)
 	public String getUsername()
 	{
 		return username;
@@ -75,6 +61,8 @@ public class User {
 		this.username = username;
 	}
 	
+	@NotNull
+	@Column(name="user_email", unique = true, length = 50)
 	public String getEmail()
 	{
 		return email;
@@ -84,6 +72,8 @@ public class User {
 		this.email = email;
 	}
 			
+	@NotNull
+	@Column(name = "password", length = 20)
 	public String getPassword()
 	{
 		return password;
@@ -93,6 +83,8 @@ public class User {
 		this.password = password;
 	}
 	
+	@NotNull
+	@Column(name = "enabled")
 	public boolean isEnabled()
 	{
 		return enabled;

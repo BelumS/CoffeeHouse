@@ -9,7 +9,7 @@ use coffeehouse;
 create table Users(
 	user_id int(11) primary key auto_increment,
 	username varchar(36) unique not null,
-	user_email varchar(40) unique not null,
+	user_email varchar(50) unique not null,
 	password varchar(20) not null,
 	enabled tinyint(1) not null default 1
 );

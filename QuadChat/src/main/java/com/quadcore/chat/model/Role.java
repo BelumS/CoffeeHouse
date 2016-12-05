@@ -1,4 +1,4 @@
-package com.quadcore.chat.model;
+/*package com.quadcore.chat.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -46,3 +46,4 @@ public class Role {
 	}
 
 }
+*/
