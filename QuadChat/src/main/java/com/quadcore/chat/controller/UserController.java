@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.quadcore.chat.dao.UserDAO;
+import com.quadcore.chat.dao.UserRepository;
 import com.quadcore.chat.model.User;
 
 @Controller
@@ -13,7 +13,7 @@ public class UserController {
 	
 	//Private fields
 	@Autowired
-	private UserDAO userDAO;
+	private UserRepository userRepository;
 	
 	//Create a new user and save it in the database
 	@GetMapping("/create")
@@ -23,9 +23,9 @@ public class UserController {
 		String userId = "";
 		
 		try {
-			User user = new User(username, email);
-			userDAO.save(user);
-			userId = String.valueOf(user.getId());
+			User user = new User(username, email, "password", true);
+			userRepository.save(user);
+			userId = String.valueOf(user.getUserId());
 			
 		}catch(Exception e) {
 			return "Error creating the user: " + e.toString();
@@ -41,7 +41,7 @@ public class UserController {
 	{
 		try {
 			User user = new User(id);
-			userDAO.delete(user);
+			userRepository.delete(user);
 		} catch(Exception ex) {
 			return "Error deleting the user: " + ex.toString();
 		}
@@ -57,8 +57,8 @@ public class UserController {
 		String userId = "";
 		
 		try {
-			User user = userDAO.findByEmail(email);
-			userId = String.valueOf(user.getId());
+			User user = userRepository.findByEmail(email);
+			userId = String.valueOf(user.getUserId());
 		}catch(Exception e) {
 			return "User not found: " + e.toString();
 		}
@@ -72,10 +72,10 @@ public class UserController {
 	public String update(Long id, String username, String email)
 	{
 		try {
-			User user = userDAO.findOne(id);
+			User user = userRepository.findOne(id);
 			user.setUsername(username);
 			user.setEmail(email);
-			userDAO.save(user);
+			userRepository.save(user);
 			
 		} catch(Exception e) {
 			return "Error updating the user: " + e.toString();

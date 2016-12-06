@@ -1,49 +1,62 @@
-/*package com.quadcore.chat.model;
+package com.quadcore.chat.model;
+
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
-//Models a User's information
+//Models a User's Role information
 @Entity
 @Table(name = "Role")
 public class Role {
 	
+	private Long roleId;
+	private String roleName;
+	private Set<User> users;
+
+	//Public methods
+	public Role(){}
+	public Role(Long roleId, String roleName){
+		this.roleId = roleId;
+		this.roleName = roleName;
+	}
+	public Role(Long roleId, String roleName, Set<User> users){
+		this.roleId = roleId;
+		this.roleName = roleName;
+		this.users = users;
+	}
+	
+	//Getters and Setters
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long role_id;
-	
-	private String role_name;
-	
-	public Role(){
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "role_id")
+	public Long getRoleId(){
+		return this.roleId;
+	}
+	public void setRoleId(Long roleId){
+		this.roleId = roleId;
 	}
 	
-	public Role(Long role_id, String role_name){
-		this.role_id = role_id;
-		this.role_name = role_name;
+	@Column(name = "role_name", nullable = false)
+	public String getRoleName(){
+		return this.roleName;
 	}
-	
-	@Column(name = "role_id", unique = true, nullable = false)
-	public Long getRole_id(){
-		return this.role_id;
-	}
-	
-	public void setRole_id(Long role_id){
-		this.role_id = role_id;
-	}
-	
-	@Column(name = "role_name", unique = false, nullable = false)
-	public String getRole_name(){
-		return this.role_name;
-	}
-	
-	public void setRole_name(String role_name){
-		this.role_name = role_name;
+	public void setRoleName(String roleName){
+		this.roleName = roleName;
 	}
 
+	@ManyToMany(mappedBy = "userRoles")
+	public Set<User> getUsers()
+	{
+		return this.users;
+	}
+	public void setUsers(Set<User> users)
+	{
+		this.users = users;
+	}
 }
-*/

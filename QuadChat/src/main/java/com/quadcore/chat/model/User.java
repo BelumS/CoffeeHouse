@@ -1,12 +1,18 @@
 package com.quadcore.chat.model;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+
 
 //Models a User's information
 @Entity
@@ -18,17 +24,14 @@ public class User {
 	private String email;
 	private String password;
 	private boolean enabled;
-	
-	//private String passwordConfirm;
-	//private Set<UserRole> roles;
-	
+	private Set<Role> userRoles;
+
 	//Public methods
 	public User(){}
 	public User(Long userId)
 	{
 		this.userId = userId;
 	}
-	
 	public User(String username, String email, String password, boolean enabled)
 	{
 		this.username = username;
@@ -36,22 +39,29 @@ public class User {
 		this.password = password;
 		this.enabled = enabled;
 	}
+	public User(String username, String email, String password, boolean enabled, Set<Role> userRoles)
+	{
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.enabled = enabled;
+		this.userRoles = userRoles;
+	}
 	
 	//Getters and setters
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id")
-	public Long getId()
+	public Long getUserId()
 	{
 		return userId;
 	}
-	public void setId(Long userId)
+	public void setUserId(Long userId)
 	{
 		this.userId = userId;
 	}
 	
-	@NotNull
-	@Column(name = "username", unique = true, length = 36)
+	@Column(name = "username", unique = true, nullable = false, length = 36)
 	public String getUsername()
 	{
 		return username;
@@ -61,8 +71,7 @@ public class User {
 		this.username = username;
 	}
 	
-	@NotNull
-	@Column(name="user_email", unique = true, length = 50)
+	@Column(name="user_email", unique = true, nullable = false, length = 50)
 	public String getEmail()
 	{
 		return email;
@@ -72,8 +81,7 @@ public class User {
 		this.email = email;
 	}
 			
-	@NotNull
-	@Column(name = "password", length = 20)
+	@Column(name = "password", nullable = false, length = 20)
 	public String getPassword()
 	{
 		return password;
@@ -83,7 +91,6 @@ public class User {
 		this.password = password;
 	}
 	
-	@NotNull
 	@Column(name = "enabled")
 	public boolean isEnabled()
 	{
@@ -94,4 +101,14 @@ public class User {
 		this.enabled = enabled;
 	}
 
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "User_Roles", joinColumns = { @JoinColumn(name = "user_id")}, inverseJoinColumns = { @JoinColumn(name = "role_id")})
+	public Set<Role> getUserRoles()
+	{
+		return this.userRoles;
+	}
+	public void setUserRoles(Set<Role> userRoles)
+	{
+		this.userRoles = userRoles;
+	}
 }

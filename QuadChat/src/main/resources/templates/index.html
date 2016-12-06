@@ -4,7 +4,159 @@
 <meta name="viewport" content="width=device-width"/>
     <head>
         <title>Welcome to Coffee House</title>
-        <link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}"/>
+        <!--<link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}"/> -->
+<style>
+/* reset styles */ 
+html, body, div, header, nav, article, section,
+aside, footer, h1, h2, h3, h6 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+body {
+	line-height: 1;
+}
+
+article, aside, section, header, footer, nav {
+	display: block;
+}
+
+nav ul {
+	list-style: none;
+}
+
+a {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+abbr[title] {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+input, select {
+	vertical-align: middle;
+}
+
+.clear {
+	clear: both;
+}
+
+/* body and page container */
+html {
+	font-size: 14px;
+}
+
+body {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.container {
+	border: 2px solid black;
+}
+
+/* link states */
+a:link {
+	text-decoration: none;
+	color: black;
+}
+
+a:visited {
+	color: purple;
+}
+
+a:active {
+	color: lightsteelblue;
+}
+
+a:hover, a:focus {
+	color: chartreuse;
+}
+
+/* navigation menu */
+nav.site-nav {
+	width: 20%;
+}
+
+nav.site-nav ul {
+	border-radius: 10px;
+	position: relative;
+	right: 15px;
+}
+
+nav.site-nav li {
+	border: 1px solid;
+	border-radius: 10px;
+	text-align: center;
+}
+
+nav.site-nav li:first-child {
+	background-color: red;
+}
+
+nav.site-nav li:nth-child(2) {
+	background-color: blue;
+}
+
+nav.site-nav li:nth-child(3) {
+	background-color: green;
+}
+
+nav.site-nav li:nth-child(4) {
+	background-color: orange;
+}
+
+nav.site-nav li:last-child {
+	background-color: yellow;
+}
+
+/* logout button */
+#logout-btn {
+    border: 1px solid;
+    border-radius: 10px;
+	position: relative;
+	left: 26px;
+    bottom: 14px;
+    text-align: center;
+    background-color: green;
+    height: 1.5em;
+    width: 75%;
+}
+
+#logout-btn:hover, #logout-btn:focus {
+   color: chartreuse;
+}
+
+/* main-content */
+article#main-content {
+	border: 1px solid green;
+	float: right;
+	width: 39%;
+}
+/* footer */
+footer {
+	padding-top: 15px;
+}
+</style>
     </head>
     <body>
         <div class="container">
