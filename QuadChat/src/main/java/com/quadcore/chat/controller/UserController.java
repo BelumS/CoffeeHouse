@@ -5,8 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.quadcore.chat.dao.UserRepository;
 import com.quadcore.chat.model.User;
+import com.quadcore.chat.repository.UserRepository;
 
 @Controller
 public class UserController {

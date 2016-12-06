@@ -1,4 +1,4 @@
-package com.quadcore.chat.dao;
+package com.quadcore.chat.repository;
 
 import javax.transaction.Transactional;
 
