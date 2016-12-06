@@ -1,4 +1,3 @@
-#create database if not exists 'coffeehouse';
 use coffeehouse;
 
 #drop table if exists User_Roles;
@@ -27,19 +26,23 @@ create table Roles (
 create table User_Roles (
 	user_id int(11) unsigned not null,
 	role_id int(11) unsigned not null,
-	constraint PK_USER_ROLE primary key (user_id, role_id),
-	constraint FK_USER_ID foreign key (user_id) references Users(user_id),
-	constraint FK_ROLE_ID foreign key (role_id) references Roles(role_id)
+	created_date date not null,
+	created_by varchar(20) not null,
+	constraint PK_USER_ROLES primary key (user_id, role_id),
+	constraint FK_USER_ROLE_USER_ID foreign key (user_id) references Users(user_id),
+	constraint FK_USER_ROLE_ROLE_ID foreign key (role_id) references Roles(role_id)
 )Engine=InnoDB default charset=utf8;
-*/
+
 #--Insert Users
 
 #--Insert Roles
-#insert into Roles(role_name) values('ROLE_USER');
-#insert into Roles(role_name) values('ROLE_ADMIN');
+#insert into Roles(role_name) values('USER');
+#insert into Roles(role_name) values('ADMIN');
+#insert into Roles(role_name) values('DBA');
 
 #--insert User Roles
 
 #--Save and Commit Changes
 commit;
+
 
