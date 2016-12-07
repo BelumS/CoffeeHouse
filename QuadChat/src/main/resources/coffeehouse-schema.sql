@@ -18,7 +18,7 @@ create table Users(
 #--Create Role
 create table Roles (
 	role_id int(11) unsigned not null auto_increment,
-	role_name varchar(45),
+	role_name varchar(45) not null,
 	primary key(role_id)
 )Engine=InnoDB auto_increment=1001 default charset=utf8;
 
@@ -27,7 +27,6 @@ create table User_Roles (
 	user_id int(11) unsigned not null,
 	role_id int(11) unsigned not null,
 	created_date date not null,
-	created_by varchar(20) not null,
 	constraint PK_USER_ROLES primary key (user_id, role_id),
 	constraint FK_USER_ROLE_USER_ID foreign key (user_id) references Users(user_id),
 	constraint FK_USER_ROLE_ROLE_ID foreign key (role_id) references Roles(role_id)

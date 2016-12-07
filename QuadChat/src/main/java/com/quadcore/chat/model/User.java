@@ -3,7 +3,6 @@ package com.quadcore.chat.model;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,45 +10,25 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-
 
 //Models a User's information
 @Entity
 @Table(name = "Users", uniqueConstraints = {
-		@UniqueConstraint(columnNames = "username"),
-		@UniqueConstraint(columnNames = "user_email")})
-public class User implements Serializable{
+@UniqueConstraint(columnNames = "username"),
+@UniqueConstraint(columnNames = "user_email")})
+public class User implements Serializable {
+
+	private static final long serialVersionUID = -1224394021146256127L;
 	
-	private static final long serialVersionUID = -1781000424836183523L;
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "user_id")
 	private Long userId;
-	
-	@Column(name = "username", unique = true, nullable = false, length = 36)
 	private String username;
-	
-	@Column(name="user_email", unique = true, nullable = false, length = 50)
 	private String email;
-	
-	@Column(name = "password", nullable = false, length = 20)
 	private String password;
-	
-	@Column(name = "enabled")
-	private boolean enabled;
-	
-	//Creates the User_Roles Table, with the attached foreign keys
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "User_Roles", 
-				joinColumns = { @JoinColumn(name = "user_id", referencedColumnName = "user_id")}, 
-				inverseJoinColumns = { @JoinColumn(name = "role_id", referencedColumnName = "role_id")})
-	private Set<Role> userRoles = new HashSet<Role>(0);
+	private Integer enabled;
+	private Set<UserRole> userRoles = new HashSet<UserRole>();
 
 	//Public methods
 	public User(){}
@@ -57,14 +36,14 @@ public class User implements Serializable{
 	{
 		this.userId = userId;
 	}
-	public User(String username, String email, String password, boolean enabled)
+	public User(String username, String email, String password, Integer enabled)
 	{
 		this.username = username;
 		this.email = email;
 		this.password = password;
 		this.enabled = enabled;
 	}
-	public User(String username, String email, String password, boolean enabled, Set<Role> userRoles)
+	public User(String username, String email, String password, Integer enabled, Set<UserRole> userRoles)
 	{
 		this.username = username;
 		this.email = email;
@@ -74,6 +53,9 @@ public class User implements Serializable{
 	}
 	
 	//Getters and setters
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "user_id")
 	public Long getUserId()
 	{
 		return userId;
@@ -83,6 +65,7 @@ public class User implements Serializable{
 		this.userId = userId;
 	}
 	
+	@Column(name = "username", unique = true, nullable = false, length = 36)
 	public String getUsername()
 	{
 		return username;
@@ -92,6 +75,7 @@ public class User implements Serializable{
 		this.username = username;
 	}
 	
+	@Column(name="user_email", unique = true, nullable = false, length = 50)
 	public String getEmail()
 	{
 		return email;
@@ -100,7 +84,8 @@ public class User implements Serializable{
 	{
 		this.email = email;
 	}
-			
+	
+	@Column(name = "password", nullable = false, length = 20)		
 	public String getPassword()
 	{
 		return password;
@@ -110,22 +95,33 @@ public class User implements Serializable{
 		this.password = password;
 	}
 	
-	public boolean isEnabled()
+	@Column(name = "enabled")
+	public Integer isEnabled()
 	{
 		return enabled;
 	}
-	public void setEnabled(boolean enabled)
+	public void setEnabled(Integer enabled)
 	{
 		this.enabled = enabled;
 	}
 
-	public Set<Role> getUserRoles()
+	//Creates the User_Roles Table, with the attached foreign keys
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "primaryKey.role", cascade = CascadeType.ALL)
+	public Set<UserRole> getUserRoles()
 	{
 		return this.userRoles;
 	}
-	public void setUserRoles(Set<Role> userRoles)
+	public void setUserRoles(Set<UserRole> userRoles)
 	{
 		this.userRoles = userRoles;
+	}
+/*	public void addUserRoles(UserRole role)
+	{
+		this.userRoles.add(role);
+	}*/
+	
+	public static long getSerialVersionUid() {
+		return serialVersionUID;
 	}
 	
 	@Override
@@ -136,15 +132,13 @@ public class User implements Serializable{
 		
 		if(userRoles != null)
 		{
-			for(Role role : userRoles)
+			for(UserRole userRole : userRoles)
 			{
 				result += String.format("User Roles[role_id=%d, role_name='%s']%n", 
-						role.getRoleId(), role.getRoleName());
+						userRole.getRole().getRoleId(), userRole.getRole().getRoleName());
 			}
 		}
-		
 		return result;
 	}
 
-	
 }

@@ -1,4 +1,7 @@
-package com.quadcore.chat.controller;
+/*package com.quadcore.chat.controller;
+
+
+ Reserved for Admin Controller, and Register Controller
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,7 +26,7 @@ public class UserController {
 		String userId = "";
 		
 		try {
-			User user = new User(username, email, "password", true);
+			User user = new User(username, email, "password", 1);
 			userRepository.save(user);
 			userId = String.valueOf(user.getUserId());
 			
@@ -86,3 +89,4 @@ public class UserController {
 			
 
 }
+*/
