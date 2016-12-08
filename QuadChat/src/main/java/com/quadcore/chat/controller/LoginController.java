@@ -4,25 +4,30 @@ import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.quadcore.chat.model.LoginForm;
+import com.quadcore.chat.service.UserService;
 
 @Controller
 public class LoginController {
 	
-	//@Autowired
-	//private UserRepository userDAO;
+	@Autowired
+	private UserService userService;
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@GetMapping("/login")
-	public String displayLoginPage(LoginForm loginForm)
+	public String displayLoginPage(@ModelAttribute("loginForm") LoginForm loginForm, Model model)
 	{
 		logger.debug("Getting login page");
+		model.addAttribute("studentLogin", new LoginForm());
 		return "login";
 	}
 	

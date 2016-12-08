@@ -1,7 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org"
-	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Coffee House - Register</title>
 <meta name="description"
@@ -146,22 +144,23 @@ input[type=submit]:active {
 	<div class="container">
 		<h2>Create an Account</h2>
 		<hr id="horiz-line" />
-		<form id="registrationForm" method="post" th:action="@{/register}">
+		<form id="registrationForm" method="post" th:action="@{/register}" th:object="${user}">
 			<div id="register">
 				<p>
-					<label>Enter your Username</label><br /> <input id="username" name="username"
+					<label>Enter your Username</label><br /> 
+					<input id="username" th:field="*{username}"
 						class="fontAwesome fixed-width" type="text" maxlength="25"
 						placeholder="&#xf007; coffeeusername1337" />
 				</p>
 				<p>
-					<label>Enter your Email</label><br /> <input id="email" name="email"
+					<label>Enter your Email</label><br /> 
+					<input id="email" th:field="*{email}"
 						class="fontAwesome fixed-width" type="email" maxlength="25"
 						placeholder="&#xf0e0; coffeebeans@email.net" />
 				</p>
 				<p>
-					<label>Enter your Password</label><br /> <input id="password" name="password"
-						onkeyup="checkCapsWarning(event)"
-						onfocus="checkCapsWarning(event)" onblur="removeCapsWarning()"
+					<label>Enter your Password</label><br /> 
+					<input id="password" th:field="*{password}"
 						class="fontAwesome fixed-width" type="password" maxlength="15"
 						placeholder="&#xf023; mypassword" />
 				</p>
@@ -170,8 +169,7 @@ input[type=submit]:active {
 
 				<p>
 					<label>Confirm your Password</label><br /> <input
-						id="confirm-password" name="password" onkeyup="checkCapsWarning(event)"
-						onfocus="checkCapsWarning(event)" onblur="removeCapsWarning()"
+						id="confirm-password"
 						class="fontAwesome fixed-width" type="password" maxlength="15"
 						placeholder="&#xf023; mypassword" />
 				</p>

@@ -17,7 +17,6 @@ import javax.persistence.Table;
 public class UserRole implements Serializable {
 	
 	private static final long serialVersionUID = -8830721051442680107L;
-	
 	private Long userRoleId;
 	private User user;
 	private String userRoleName;

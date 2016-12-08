@@ -14,6 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 //Models a User's information
 @Entity
@@ -26,7 +27,8 @@ public class User implements Serializable {
 	private String username;
 	private String email;
 	private String password;
-	private boolean enabled;
+	private String passwordConfirm;
+	private boolean enabled = true;
 	private Date createdDate;
 	private Set<UserRole> userRoles = new HashSet<UserRole>(0);
 
@@ -83,12 +85,20 @@ public class User implements Serializable {
 		this.email = email;
 	}
 	
-	@Column(name = "user_password", nullable = false, length = 40)
+	@Column(name = "user_password", nullable = false, length = 60)
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	@Transient
+	public String getPasswordConfirm() {
+		return passwordConfirm;
+	}
+	public void setPasswordConfirm(String passwordConfirm) {
+		this.passwordConfirm = passwordConfirm;
 	}
 	
 	@Column(name = "user_enabled", nullable = false)

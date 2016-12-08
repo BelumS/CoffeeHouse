@@ -18,6 +18,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 		registry.addViewController("/chat").setViewName("chat");
 		registry.addViewController("/errors/403").setStatusCode(HttpStatus.FORBIDDEN);
 		registry.addViewController("/admin").setViewName("admin");
+		registry.addViewController("/results").setViewName("results");
 	}
 
 }

@@ -8,7 +8,7 @@ create table Users (
 	user_id int(10) unsigned not null auto_increment,
 	username varchar(45) not null,
 	user_email varchar(50) not null,
-	user_password varchar(40) not null,
+	user_password varchar(60) not null,
 	user_enabled tinyint not null default 1,
 	user_created_date date not null,
     primary key(user_id),
