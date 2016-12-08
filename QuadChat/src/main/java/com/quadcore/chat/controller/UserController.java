@@ -1,7 +1,7 @@
-/*package com.quadcore.chat.controller;
+package com.quadcore.chat.controller;
 
 
- Reserved for Admin Controller, and Register Controller
+ //Reserved for Admin Controller, and Register Controller
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,14 +19,14 @@ public class UserController {
 	private UserRepository userRepository;
 	
 	//Create a new user and save it in the database
-	@GetMapping("/create")
+	@GetMapping("/admin/create")
 	@ResponseBody
 	public String create(String username, String email)
 	{
 		String userId = "";
 		
 		try {
-			User user = new User(username, email, "password", 1);
+			User user = new User(username, email, "password", true);
 			userRepository.save(user);
 			userId = String.valueOf(user.getUserId());
 			
@@ -38,7 +38,7 @@ public class UserController {
 	}
 	
 	//Delete the user having passed the ID
-	@GetMapping("/delete")
+	@GetMapping("/admin/delete")
 	@ResponseBody
 	public String delete(Long id)
 	{
@@ -53,7 +53,7 @@ public class UserController {
 	}
 	
 	//Return the ID for the user having passed the email.
-	@GetMapping("/get-by-email")
+	@GetMapping("/admin/get-by-email")
 	@ResponseBody
 	public String getByEmail(String email)
 	{
@@ -86,7 +86,4 @@ public class UserController {
 		
 		return "User successfully updated!";
 	}
-			
-
 }
-*/

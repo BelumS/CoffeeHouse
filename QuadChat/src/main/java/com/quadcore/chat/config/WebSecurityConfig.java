@@ -13,13 +13,22 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import com.quadcore.chat.repository.UserRepository;
+import com.quadcore.chat.service.impl.UserDetailsServiceImpl;
+
 @Configuration
 @EnableWebSecurity
 @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
-	private UserDetailsService userDetailsService;
+	private UserRepository userRepository;
+	
+	@Override
+	public UserDetailsService userDetailsServiceBean() throws Exception 
+	{
+		return new UserDetailsServiceImpl(userRepository);
+	}
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception 
@@ -46,11 +55,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception 
 	{
-		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
-		/*auth.inMemoryAuthentication()
-			.withUser("user").password("password").roles("USER")
-		.and()
-			.withUser("admin").password("password").roles("ADMIN");*/
+		auth.userDetailsService(userDetailsServiceBean()).passwordEncoder(passwordEncoder());
+		
+		//auth.inMemoryAuthentication()
+			//.withUser("user").password("password").roles("USER")
+		//.and()
+			//.withUser("admin").password("password").roles("ADMIN");
 		
 		/*auth.jdbcAuthentication().dataSource(dataSource)
 			.usersByUsernameQuery("")
