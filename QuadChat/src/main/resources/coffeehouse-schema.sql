@@ -1,7 +1,7 @@
 use coffeehouse;
 
-#drop table if exists User_Roles;
-#drop table if exists Users;
+drop table if exists User_Roles;
+drop table if exists Users;
 
 #--Create User
 create table Users (
@@ -25,6 +25,8 @@ create table User_Roles (
 	constraint FK_USER_ID foreign key (user_id) references Users(user_id)
 )Engine=InnoDB default charset=utf8 auto_increment=1001;
 
+#insert into User_Roles(user_id, user_role_name) values(1, "USER");
+#insert into User_Roles(user_id, user_role_name) values(1, "ADMIN");
 #--Save and Commit Changes
 commit;
 
