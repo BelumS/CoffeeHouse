@@ -18,7 +18,7 @@ create table Users (
 
 #--User Roles
 create table User_Roles (
-	user_role_id int(10) unsigned not null,
+	user_role_id int(10) unsigned not null auto_increment,
 	user_id int(10) unsigned not null,
 	user_role_name varchar(45) not null,
 	primary key (user_role_id),

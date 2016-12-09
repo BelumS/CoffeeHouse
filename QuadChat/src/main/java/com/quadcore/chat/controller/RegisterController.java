@@ -1,8 +1,6 @@
 package com.quadcore.chat.controller;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -15,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.quadcore.chat.model.User;
-import com.quadcore.chat.repository.UserRepository;
 import com.quadcore.chat.service.UserService;
 
 @Controller
@@ -42,7 +39,7 @@ public class RegisterController {
 		String info = String.format("User Submission: id= %d%nUsername = %s%nEmail = %s%nCreated: %s", 
 				user.getUserId(), user.getUsername(), user.getEmail(), formattedDate);
 		log.info(info);*/
-
+	
 		if(result.hasErrors())
 		{
 			return "register";
