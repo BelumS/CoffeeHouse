@@ -1,4 +1,4 @@
-package com.quadcore.chat.service;
+/*package com.quadcore.chat.service;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,14 +13,13 @@ import com.quadcore.chat.model.UserRole;
 import com.quadcore.chat.repository.RoleRepository;
 import com.quadcore.chat.repository.UserRepository;
 
-@Service("userService")
 public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	private UserRepository userRepository;
 	
-	@Autowired
-	private RoleRepository roleRepository;
+	//@Autowired
+	//private RoleRepository roleRepository;
 	
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -28,12 +27,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	@Transactional
 	public User save(User user) {
-		Set<UserRole> stuff = new HashSet<UserRole>();
-		stuff.add(new UserRole(user, "USER"));
-		roleRepository.save(stuff);
+		
+		//roleRepository.findOne(1001L);
 		
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-		user.setUserRoles(stuff);
+		//user.addUserRole(role);
 		
 		return userRepository.save(user);
 	}
@@ -73,4 +71,4 @@ public class UserServiceImpl implements UserService {
 		return false;
 	}
 
-}
+}*/

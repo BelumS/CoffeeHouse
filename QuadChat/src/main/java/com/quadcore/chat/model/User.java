@@ -1,64 +1,69 @@
 package com.quadcore.chat.model;
 
-import java.io.Serializable;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
-//Models a User's information
+//Models a User table from the database
 @Entity
 @Table(name = "Users")
-public class User implements Serializable {
+public class User {
 
-	private static final long serialVersionUID = -1224394021146256127L;
-	
+	//Private fields
 	private Long userId;
 	private String username;
-	private String email;
 	private String password;
-	private String passwordConfirm;
-	private boolean enabled = true;
-	private Date createdDate;
-	private Set<UserRole> userRoles = new HashSet<UserRole>(0);
-
+	private String confirmPassword;
+	private String email;
+	private Set<UserRole> userRole = new HashSet<UserRole>();
+	
 	//Public methods
 	public User(){}
 	public User(Long userId)
 	{
 		this.userId = userId;
 	}
-	public User(String username, String email, String password, boolean enabled)
+	public User(String username, String password, String email)
 	{
 		this.username = username;
-		this.email = email;
 		this.password = password;
-		this.enabled = enabled;
+		this.email = email;
 	}
-	public User(String username, String email, String password, boolean enabled, Set<UserRole> userRoles)
+	
+	public void addUserRole(UserRole role)
 	{
-		this.username = username;
-		this.email = email;
-		this.password = password;
-		this.enabled = enabled;
-		this.userRoles = userRoles;
+		this.userRole.add(role);
+	}
+	
+	@Override
+	public String toString()
+	{
+		String result = String.format("User[user_id=%d%n username='%s'%n email=%s%n password=%s]", 
+				userId, username, email, password);
+		
+		if(userRole != null)
+		{
+			for(UserRole role : userRole)
+			{
+				result += String.format("User Role[role_id=%d, role_name='%s']%n", 
+						role.getRole().getRoleId(), role.getRole().getRoleName());
+			}
+		}
+		return result;
 	}
 	
 	//Getters and Setters
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id", nullable = false)
 	public Long getUserId()
 	{
@@ -68,85 +73,52 @@ public class User implements Serializable {
 	{
 		this.userId = userId;
 	}
-	
+
 	@Column(name = "username", unique = true, nullable = false, length = 45)
-	public String getUsername()
-	{
+	public String getUsername() {
 		return username;
 	}
-	public void setUsername(String username)
-	{
+	public void setUsername(String username) {
 		this.username = username;
 	}
-	
-	@Column(name = "user_email", unique = true, nullable = false, length = 50)
- 	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
-	@Column(name = "user_password", nullable = false, length = 60)
+
+	@Column(name = "password", nullable = false, length = 60)
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
+	//Hibernate will not persist this in the database, used only for 
+	//Registration Form validation
 	@Transient
-	public String getPasswordConfirm() {
-		return passwordConfirm;
-	}
-	public void setPasswordConfirm(String passwordConfirm) {
-		this.passwordConfirm = passwordConfirm;
-	}
-	
-	@Column(name = "user_enabled", nullable = false)
-	public boolean isEnabled() {
-		return enabled;
-	}
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
-	}
-	
-	@Temporal(TemporalType.DATE)
-	@Column(name = "user_created_date", nullable = false)
-	public Date getCreatedDate() {
-		return createdDate;
-	}
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
-	}
-	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade=CascadeType.ALL)
-	public Set<UserRole> getUserRoles() {
-		return userRoles;
-	}
-	public void setUserRoles(Set<UserRole> userRoles) {
-		this.userRoles = userRoles;
-	}
-	
-	public static long getSerialVersionUid() {
-		return serialVersionUID;
-	}
-	
-	/*@Override
-	public String toString()
+	public String getConfirmPassword()
 	{
-		String result = String.format("User[user_id=%d%n username='%s'%n email=%s%n password=%s%n enabled=]", 
-				userId, username, email, password, enabled);
-		
-		if(userRoles != null)
-		{
-			for(UserRole userRole : userRoles)
-			{
-				result += String.format("User Roles[role_id=%d, role_name='%s']%n", 
-						userRole.getRole().getRoleId(), userRole.getRole().getRoleName());
-			}
-		}
-		return result;
-	}*/
+		return confirmPassword;
+	}
+	public void setConfirmPassword(String confirmPassword)
+	{
+		this.confirmPassword = confirmPassword;
+	}
+	
+	@Column(name = "user_email", unique = true, nullable = false, length = 60)
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) 
+	{
+		this.email = email;
+	}
+	
+	@OneToMany(mappedBy = "PK.user", cascade = CascadeType.ALL)
+	public Set<UserRole> getUserRoles()
+	{
+		return userRole;
+	}
+	public void setUserRoles(Set<UserRole> userRole)
+	{
+		this.userRole = userRole;
+	}
 
 }

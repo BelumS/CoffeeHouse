@@ -1,4 +1,4 @@
-package com.quadcore.chat.service;
+/*package com.quadcore.chat.service;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -33,8 +33,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		
 		for (UserRole role : user.getUserRoles())
 		{
-			grantedAuthorities.add(new SimpleGrantedAuthority(role.getUserRoleName()));
+			grantedAuthorities.add(new SimpleGrantedAuthority(role.getRole().getRoleName()));
 		}
 		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), grantedAuthorities);
 	}
 }
+*/

@@ -1,4 +1,4 @@
-package com.quadcore.test.controller;
+/*package com.quadcore.test.controller;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -23,7 +23,7 @@ public class LoginControllerTest {
 				.andDo(print());
 	}
 	
-	/*@Test
+	@Test
 	public void testLoginForm() throws Exception
 	{
 		controller = new LoginController();
@@ -34,6 +34,6 @@ public class LoginControllerTest {
 			.andExpect(redirectedUrl("/"))
 			.andExpect(status().isFound())
 			.andDo(print());
-	}*/
-
+	}
 }
+*/

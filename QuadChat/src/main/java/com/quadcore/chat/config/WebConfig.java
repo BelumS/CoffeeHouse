@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {
-	
+
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) 
 	{
@@ -20,5 +20,4 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 		registry.addViewController("/admin").setViewName("admin");
 		registry.addViewController("/results").setViewName("results");
 	}
-
 }

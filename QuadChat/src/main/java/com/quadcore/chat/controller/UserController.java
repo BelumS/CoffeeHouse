@@ -1,4 +1,4 @@
-package com.quadcore.chat.controller;
+/*package com.quadcore.chat.controller;
 
 
  //Reserved for Admin Controller, and Register Controller
@@ -16,7 +16,7 @@ public class UserController {
 	
 	//Private fields
 	@Autowired
-	private UserRepository userRepository;
+	private UserService userService;
 	
 	//Create a new user and save it in the database
 	@GetMapping("/admin/create")
@@ -26,8 +26,8 @@ public class UserController {
 		String userId = "";
 		
 		try {
-			User user = new User(username, email, "password", true);
-			userRepository.save(user);
+			User user = new User(username, email, "password");
+			userService.save(user);
 			userId = String.valueOf(user.getUserId());
 			
 		}catch(Exception e) {
@@ -86,4 +86,4 @@ public class UserController {
 		
 		return "User successfully updated!";
 	}
-}
+}*/

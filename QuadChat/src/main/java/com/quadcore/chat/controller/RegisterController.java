@@ -1,4 +1,4 @@
-package com.quadcore.chat.controller;
+/*package com.quadcore.chat.controller;
 
 import java.util.Date;
 import javax.validation.Valid;
@@ -34,11 +34,11 @@ public class RegisterController {
 	public String submitRegisterForm(@Valid @ModelAttribute("user") User user, BindingResult result, Model model)
 	{
 		
-		/*String formattedDate = new SimpleDateFormat("dd/MM/yyyy, Ka").format(userDate);
+		String formattedDate = new SimpleDateFormat("dd/MM/yyyy, Ka").format(userDate);
 
 		String info = String.format("User Submission: id= %d%nUsername = %s%nEmail = %s%nCreated: %s", 
 				user.getUserId(), user.getUsername(), user.getEmail(), formattedDate);
-		log.info(info);*/
+		log.info(info);
 	
 		if(result.hasErrors())
 		{
@@ -51,11 +51,11 @@ public class RegisterController {
 		}
 		else
 		{
-			user.setCreatedDate(new Date());
 			userService.save(user);
-			//model.addAttribute("message", "Saved user details");
+			model.addAttribute("message", "Saved user details");
 			return "results";
 		}
 
 	}
 }
+*/

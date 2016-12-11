@@ -1,10 +1,8 @@
 package com.quadcore.chat.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -13,24 +11,21 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.quadcore.chat.repository.UserRepository;
-import com.quadcore.chat.service.UserDetailsServiceImpl;
-
 @Configuration
 @EnableWebSecurity
-@Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
-	@Autowired
-	private UserDetailsService userDetailsService;
+	//@Autowired
+	//private UserDetailsService userDetailsService;
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception 
 	{	
 		http.authorizeRequests()
 		.antMatchers("/register").permitAll()
+		.and().authorizeRequests().antMatchers("/h2-console/**").permitAll()
 		.antMatchers("/", "/chat").hasAnyRole("ADMIN","USER")
-		.antMatchers("/admins/**").hasRole("ADMIN")
+		.antMatchers("/admin").hasRole("ADMIN")
 			.and()
 		.formLogin()
 		.loginPage("/login")
@@ -44,18 +39,21 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.permitAll()
 			.and()
 		.exceptionHandling().accessDeniedPage("/errors/403");
+		
+		http.csrf().disable();
+		http.headers().frameOptions().disable();
 	}
 	
 	@Autowired
 	protected void configureGlobal(AuthenticationManagerBuilder auth) throws Exception 
 	{
-		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+		//auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
 		
-		//auth.inMemoryAuthentication()
-			//.withUser("user").password("password").roles("USER")
-		//.and()
-			//.withUser("admin").password("password").roles("ADMIN");
-	}
+		auth.inMemoryAuthentication()
+			.withUser("user").password("password").roles("USER")
+		.and()
+			.withUser("admin").password("password").roles("ADMIN");
+		}
 	
 	@Bean
 	public PasswordEncoder passwordEncoder()

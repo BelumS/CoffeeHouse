@@ -1,4 +1,4 @@
-package com.quadcore.chat.controller;
+/*package com.quadcore.chat.controller;
 
 import javax.validation.Valid;
 
@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.quadcore.chat.model.LoginForm;
-import com.quadcore.chat.service.UserService;
+//import com.quadcore.chat.service.UserService;
 
 @Controller
 public class LoginController {
 	
-	@Autowired
-	private UserService userService;
+	//@Autowired
+	//private UserService userService;
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -38,10 +38,10 @@ public class LoginController {
 			return "login?error";
 		}
 		
-		/*if(!userDAO.authenticate(
+		if(!userService.authenticate(
 				loginForm.getUsername(), loginForm.getPassword())) {
 			return "login?error";
-		}*/
+		}
 		
 		return "redirect:/";
 	}
@@ -51,5 +51,4 @@ public class LoginController {
 	{
 		return "/login?logout";
 	}
-}
-
+}*/
