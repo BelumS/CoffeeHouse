@@ -1,4 +1,4 @@
-/*package com.quadcore.chat.service;
+package com.quadcore.chat.service;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -27,7 +27,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	@Transactional(readOnly = true)
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException 
 	{
-		User user = userRepository.findByUsername(username);
+		final User user = userRepository.findByUsername(username);
+		
+		if(user == null) {
+			throw new UsernameNotFoundException(username + " not found.");
+		}
 	
 		Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
 		
@@ -38,4 +42,3 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), grantedAuthorities);
 	}
 }
-*/

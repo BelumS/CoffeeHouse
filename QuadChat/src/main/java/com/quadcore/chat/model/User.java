@@ -1,5 +1,6 @@
 package com.quadcore.chat.model;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,6 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 //Models a User table from the database
@@ -24,6 +27,8 @@ public class User {
 	private String password;
 	private String confirmPassword;
 	private String email;
+	private boolean activated;
+	private Date createdDate;
 	private Set<UserRole> userRole = new HashSet<UserRole>();
 	
 	//Public methods
@@ -109,6 +114,23 @@ public class User {
 	public void setEmail(String email) 
 	{
 		this.email = email;
+	}
+	
+	@Column(name = "activated", nullable = false)
+	public boolean isActivated() {
+		return activated;
+	}
+	public void setActivated(boolean activated) {
+		this.activated = activated;
+	}
+
+	@Column(name = "created_date", nullable = false)
+	@Temporal(TemporalType.DATE)
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
 	}
 	
 	@OneToMany(mappedBy = "PK.user", cascade = CascadeType.ALL)

@@ -30,10 +30,6 @@ public class UserRole implements Serializable {
 	//composite-id PK
 	private UserRoleId PK = new UserRoleId();
 	
-	//Additional fields
-	private boolean activated;
-	private Date createdDate;
-	
 	//Getters and Setters
 	@EmbeddedId
 	public UserRoleId getPK()
@@ -63,23 +59,6 @@ public class UserRole implements Serializable {
 	public void setRole(Role role)
 	{
 		this.getPK().setRole(role);
-	}
-	
-	@Column(name = "activated", nullable = false)
-	public boolean isActivated() {
-		return activated;
-	}
-	public void setActivated(boolean activated) {
-		this.activated = activated;
-	}
-
-	@Column(name = "created_date", nullable = false)
-	@Temporal(TemporalType.DATE)
-	public Date getCreatedDate() {
-		return createdDate;
-	}
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
 	}
 	
 	public static long getSerialVersionUid() {

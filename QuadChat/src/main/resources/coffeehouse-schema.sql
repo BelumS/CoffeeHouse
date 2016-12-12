@@ -8,6 +8,8 @@ create table Users (
 	username varchar(45) not null,
 	password varchar(60) not null,
 	user_email varchar(60) not null,
+	created_date date not null,
+	activated tinyint(1) not null,
     primary key(user_id),
     unique key UK_USERNAME (username),
  	unique key UK_USER_EMAIL (user_email)
@@ -25,8 +27,6 @@ drop table if exists User_Roles;
 create table User_Roles (
 	user_id int(11) unsigned not null,
 	role_id int(11) unsigned not null,
-	created_date date not null,
-	activated tinyint(1) not null,
 	primary key (user_id, role_id),
 	constraint FK_USER_ID foreign key (user_id) references Users(user_id),
 	constraint FK_ROLE_ID foreign key (role_id) references Roles(role_id)
