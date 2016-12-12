@@ -48,10 +48,10 @@ public class UserService {
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		user.setActivated(true);
 		user.setCreatedDate(new Date());
+		userRepository.save(user);
 		
 		userRole.getPK().setUser(user);
 		userRoleRepository.save(userRole);
-		userRepository.save(user);
 	}
 
 	public boolean findByLogin(String username, String password) 

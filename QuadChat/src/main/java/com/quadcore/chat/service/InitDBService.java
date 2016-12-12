@@ -63,7 +63,6 @@ public class InitDBService {
 			userRole.getPK().setRole(roleUser);
 			userRole.getPK().setRole(roleAdmin);
 			userRoleRepository.save(userRole);
-			
 		}
 	}
 }

@@ -18,8 +18,8 @@ import com.quadcore.chat.service.UserService;
 @Controller
 public class LoginController {
 	
-	/*@Autowired
-	private UserService userService;*/
+	//@Autowired
+	//private UserService userService;
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -37,11 +37,6 @@ public class LoginController {
 		if(bindingResult.hasErrors()) {
 			return "login?error";
 		}
-		
-		/*if(!userService.authenticate(
-				loginForm.getUsername(), loginForm.getPassword())) {
-			return "login?error";
-		}*/
 		
 		return "redirect:/";
 	}

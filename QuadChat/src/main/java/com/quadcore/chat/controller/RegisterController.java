@@ -1,6 +1,5 @@
 package com.quadcore.chat.controller;
 
-import java.util.Date;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -42,12 +41,12 @@ public class RegisterController {
 	
 		if(result.hasErrors())
 		{
-			return "register";
+			return "register?error";
 		}
 		else if(userService.findByUsername(user.getUsername()))
 		{
 			model.addAttribute("message", "Username already exists. Try another username.");
-			return "register";
+			return "register?error";
 		}
 		else
 		{
