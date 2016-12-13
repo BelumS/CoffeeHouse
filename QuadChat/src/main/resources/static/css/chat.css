@@ -1,0 +1,245 @@
+/* reset styles */ 
+html, body, div, header, nav, article, section,
+aside, footer, h1, h2, h3, h6 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+body {
+	line-height: 1;
+}
+
+article, aside, section, header, footer, nav {
+	display: block;
+}
+
+nav ul {
+	list-style: none;
+}
+
+a {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+abbr[title] {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+
+input, select {
+	vertical-align: middle;
+}
+
+.clear {
+	clear: both;
+}
+
+/* body and page container */
+html {
+	font-size: 14px;
+}
+
+body {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.container {
+	border: 2px solid black;
+}
+
+/* link states */
+a:link {
+	text-decoration: none;
+	color: black;
+}
+
+a:visited {
+	color: purple;
+}
+
+a:active {
+	color: lightsteelblue;
+}
+
+a:hover, a:focus {
+	color: chartreuse;
+}
+
+/* navigation menu */
+nav.site-nav {
+	width: 20%;
+}
+
+nav.site-nav ul {
+	border-radius: 10px;
+	position: relative;
+	right: 15px;
+}
+
+nav.site-nav li {
+	border: 1px solid;
+	border-radius: 10px;
+	text-align: center;
+}
+
+nav.site-nav li:first-child {
+	background-color: red;
+}
+
+nav.site-nav li:nth-child(2) {
+	background-color: blue;
+}
+
+nav.site-nav li:nth-child(3) {
+	background-color: green;
+}
+
+nav.site-nav li:nth-child(4) {
+	background-color: orange;
+}
+
+nav.site-nav li:last-child {
+	background-color: yellow;
+}
+
+/* logout button */
+#logout-btn {
+    border: 1px solid;
+    border-radius: 10px;
+	position: relative;
+	left: 26px;
+    bottom: 14px;
+    text-align: center;
+    background-color: green;
+    height: 1.5em;
+    width: 75%;
+}
+
+#logout-btn:hover, #logout-btn:focus {
+   color: chartreuse;
+}
+
+/*************************************
+ * Chat Page
+ ******************************/
+/* chatroom content */
+section#chat-box-outer {
+	border: 1px solid red;
+	position: relative;
+    left: 300px;
+	width: 580px;
+	height: 400px; 
+}
+
+input[type=text] {
+  width: 95%;
+  border: solid 1px #D4D4D1;
+  transition: .7s;
+  font-size: 1.1em;
+  padding: 0.3em;
+  margin: 0.2em;
+  position: relative;
+  left: 10px;
+}
+
+input[type=text]:focus {
+  -webkit-box-shadow: 0 0 5px 0 rgba(69, 155, 231, .75);
+  -moz-box-shadow: 0 0 5px 0 rgba(69, 155, 231, .75);
+  box-shadow: 0 0 5px 0 rgba(69, 155, 231, .75);
+  border-color: #459be7;
+  outline: none;
+}
+
+.info {
+  float: right;
+}
+
+form:after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+button {
+  background: #459be7;
+  color: #FFF;
+  font-weight: 600;
+  padding: .3em 1.9em;
+  border: none;
+  font-size: 1.2em;
+  margin: 0;
+  text-shadow: 0 0 5px rgba(0, 0, 0, .3);
+  cursor: pointer;
+  transition: .7s;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  background: #1c82dd;
+}
+
+button:disabled {
+  background-color: #90BFE8;
+  cursor: not-allowed;
+}
+
+.count {
+  font-weight: 300;
+  font-size: 1.35em;
+  color: #CCC;
+  transition: .7s;
+}
+
+.count.danger {
+  color: #a94442;
+  font-weight: 600;
+}
+
+.message time {
+  width: 80px;
+  color: #999;
+  display: block;
+  float: left;
+}
+
+.message {
+  margin: 0;
+}
+
+.message .self {
+  font-weight: 600;
+}
+
+.message span {
+  width: calc(100% - 80px);
+  display: block;
+  float: left;
+  padding-left: 20px;
+  border-left: solid 1px #F1F1F1;
+  padding-bottom: .5em;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* footer */
+footer {
+	padding-top: 15px;
+}
