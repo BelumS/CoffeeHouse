@@ -53,6 +53,11 @@ public class UserService {
 		userRole.getPK().setUser(user);
 		userRoleRepository.save(userRole);
 	}
+	
+	public void delete(User user)
+	{
+		userRepository.delete(user);
+	}
 
 	public boolean findByLogin(String username, String password) 
 	{

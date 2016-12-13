@@ -37,7 +37,6 @@ public class LoginController {
 		if(bindingResult.hasErrors()) {
 			return "login?error";
 		}
-		
 		return "redirect:/";
 	}
 	

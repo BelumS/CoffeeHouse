@@ -1,4 +1,4 @@
-/*package com.quadcore.chat.controller;
+package com.quadcore.chat.controller;
 
 
  //Reserved for Admin Controller, and Register Controller
@@ -9,8 +9,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.quadcore.chat.model.User;
-import com.quadcore.chat.repository.UserRepository;
+import com.quadcore.chat.service.UserService;
 
+/**
+ * 
+ * @author Quadcore
+ * @category The Controller that determines an Admin's behavior
+ * @version 1.0
+ */
 @Controller
 public class UserController {
 	
@@ -44,7 +50,8 @@ public class UserController {
 	{
 		try {
 			User user = new User(id);
-			userRepository.delete(user);
+			userService.delete(user);
+		
 		} catch(Exception ex) {
 			return "Error deleting the user: " + ex.toString();
 		}
@@ -58,9 +65,10 @@ public class UserController {
 	public String getByEmail(String email)
 	{
 		String userId = "";
+		User user = new User();
 		
 		try {
-			User user = userRepository.findByEmail(email);
+			//User user = userRepository.findByEmail(email);
 			userId = String.valueOf(user.getUserId());
 		}catch(Exception e) {
 			return "User not found: " + e.toString();
@@ -75,10 +83,10 @@ public class UserController {
 	public String update(Long id, String username, String email)
 	{
 		try {
-			User user = userRepository.findOne(id);
+			User user = userService.findOne(id);
 			user.setUsername(username);
 			user.setEmail(email);
-			userRepository.save(user);
+			userService.save(user);
 			
 		} catch(Exception e) {
 			return "Error updating the user: " + e.toString();
@@ -86,4 +94,4 @@ public class UserController {
 		
 		return "User successfully updated!";
 	}
-}*/
+}
