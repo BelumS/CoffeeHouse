@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,6 +17,16 @@ import com.quadcore.chat.repository.RoleRepository;
 import com.quadcore.chat.repository.UserRepository;
 import com.quadcore.chat.repository.UserRoleRepository;
 
+/**
+ * An implementation of the UserRepository
+ * <p>
+ * @author Quadcore
+ * @since 12/12/16
+ * @version 2.0
+ * @category Service
+ * @see com.quadcore.chat.repository.UserRepository
+ *
+ */
 @Service
 @Transactional
 public class UserService {

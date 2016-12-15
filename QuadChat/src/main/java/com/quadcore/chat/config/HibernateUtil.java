@@ -5,6 +5,16 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
+/**
+ * The file that configures the Hibernate settings, currently not in use
+ * <p>
+ * @author Quadcore
+ * @since 12/9/16
+ * @version 2.0
+ * @see org.hibernate.Hibernate
+ * @see org.hibernate.cfg.Configuration
+ * @see org.hibernate.SessionFactory
+ */
 public class HibernateUtil {
 	
 	private static SessionFactory sessionFactory;

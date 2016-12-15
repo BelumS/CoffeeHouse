@@ -8,6 +8,16 @@ import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;
 import com.quadcore.chat.controller.LoginController;
 
+*//**
+ * Testing the Spring MVC - Login Controller
+ * <p>
+ * @author Quadcore
+ * @since 11/21/16
+ * @version 2.0
+ * @category Test
+ * @see LoginController
+ *
+ *//*
 public class LoginControllerTest {
 	
 	private LoginController controller;
@@ -30,10 +40,9 @@ public class LoginControllerTest {
 		MockMvc mockMvc = standaloneSetup(controller).build();
 
 		mockMvc.perform(post("/login"))
-			.andExpect(view().name("redirect:/"))
+			.andExpect(view().name("login"))
 			.andExpect(redirectedUrl("/"))
 			.andExpect(status().isFound())
 			.andDo(print());
 	}
-}
-*/
+}*/

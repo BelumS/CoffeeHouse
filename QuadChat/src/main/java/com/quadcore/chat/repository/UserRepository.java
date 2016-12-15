@@ -5,6 +5,16 @@ import org.springframework.stereotype.Repository;
 
 import com.quadcore.chat.model.User;
 
+/**
+ * Controls the database CRUD operations for the "Users" table
+ * <p>
+ * @author Quadcore
+ * @since 12/6/16
+ * @version 2.0
+ * @category Repository
+ * @see JpaRepository
+ *
+ */
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
 

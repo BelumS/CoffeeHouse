@@ -15,11 +15,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.quadcore.chat.model.LoginForm;
 import com.quadcore.chat.service.UserService;
 
+/**
+ * The Spring MVC controller that maps the HTTP requests for the Login page
+ * <p>
+ * @author Quadcore
+ * @since 10/16/16
+ * @Version 1.0
+ * @category Spring MVC Controller
+ * @see login.html
+ * {@linkplain src/main/resources/templates/login.html}
+ */
 @Controller
 public class LoginController {
-	
-	//@Autowired
-	//private UserService userService;
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 

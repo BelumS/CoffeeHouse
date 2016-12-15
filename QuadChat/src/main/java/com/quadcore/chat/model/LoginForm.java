@@ -5,7 +5,17 @@ import javax.validation.constraints.Size;
 
 import com.quadcore.chat.model.User;
 
-//Login Form model, holds the validation rules for the form fields
+/**
+ * Holds the validation rules for the Login form fields
+ * <p>
+ * @author BelumEx
+ * @since 12/8/16
+ * @version 1.0
+ * @category Spring MVC - Model
+ * @see com.quadcore.chat.controller.LoginController
+ * @see src/main/resources/templates/login.html
+ *
+ */
 public class LoginForm {
 	
 	//Private Fields

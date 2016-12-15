@@ -6,7 +6,17 @@ import javax.persistence.CascadeType;
 import javax.persistence.Embeddable;
 import javax.persistence.ManyToOne;
 
-//Represents the composite PK from the Join Table
+/**
+ * Represents the composite PK from the "User_Roles" table
+ * <p>
+ * @author Quadcore
+ * @since 12/6/16
+ * @version 1.0
+ * @category Spring MVC - Model
+ * @category Hibernate/JPA - Entity
+ * @see src/main/resources/coffeehouse-schema.sql
+ *
+ */
 @Embeddable
 public class UserRoleId implements Serializable{
 

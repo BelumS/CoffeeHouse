@@ -15,8 +15,15 @@ import com.quadcore.chat.repository.RoleRepository;
 import com.quadcore.chat.repository.UserRepository;
 import com.quadcore.chat.repository.UserRoleRepository;
 
-//Works, successfully saved coffeeadmin as an Admin
-
+/**
+ * Programmatically creates an Admin account upon the database's Initialization
+ * <p>
+ * @author Quadcore
+ * @since 12/12/16
+ * @version 2.0
+ * @category Service
+ *
+ */
 @Service
 @Transactional
 public class InitDBService {
@@ -54,7 +61,6 @@ public class InitDBService {
 			userAdmin.setEmail("coffeeadmin@coffee.net");
 			userAdmin.setActivated(true);
 			userAdmin.setCreatedDate(new Date());
-			//userAdmin.addUserRole(userRole);
 			userRepository.save(userAdmin);
 			
 			//Add above roles to the join table

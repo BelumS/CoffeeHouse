@@ -5,9 +5,12 @@ import java.util.Date;
 import com.quadcore.chat.dto.Message;
 
 /**
+ * Models an outgoing chatroom Message
+ * <p>
  *@author Quadcore
+ *@since 12/13/16
  *@version 1.0
- *@category Models an outgoing chatroom Message
+ *@category Data Transfer Object
  *@see com.quadcore.chat.dto.Message
  */
 public class OutputMessage extends Message {

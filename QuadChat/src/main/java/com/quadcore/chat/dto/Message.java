@@ -3,9 +3,12 @@ package com.quadcore.chat.dto;
 import com.quadcore.chat.model.User;
 
 /**
+ * Models an incoming chatroom Message
+ * <p>
  *@author Quadcore
+ *@since 12/13/16
  *@version 1.0
- *@category Models an incoming chatroom Message
+ *@category Data Transfer Object
  *@see com.quadcore.chat.dto.OutputMessage
  */
 public class Message {

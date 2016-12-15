@@ -13,6 +13,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.quadcore.chat.dto.Message;
 import com.quadcore.chat.dto.OutputMessage;
 
+/**
+ * The Spring MVC controller that maps the HTTP requests for the Chatroom page
+ * <p>
+ * @author Quadcore
+ * @since 10/14/16
+ * @Version 1.0
+ * @category Spring MVC - Controller
+ * @see chat.html
+ * {@link src/main/resources/templates/chat.html}
+ */
 @Controller
 public class ChatController {
 	

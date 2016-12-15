@@ -14,6 +14,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.quadcore.chat.model.User;
 import com.quadcore.chat.service.UserService;
 
+/**
+ * The Spring MVC controller that maps the HTTP requests for the Registration page
+ * <p>
+ * @author Quadcore
+ * @since 10/27/16
+ * @Version 1.0
+ * @category Spring MVC Controller
+ * @see register.html
+ * {@link src/main/resources/templates/register.html}
+ * <p>
+ * {@link src/main/resources/templates/results.html}
+ */
 @Controller
 public class RegisterController {
 
@@ -32,13 +44,6 @@ public class RegisterController {
 	@PostMapping("/register")
 	public String submitRegisterForm(@Valid @ModelAttribute("user") User user, BindingResult result, Model model)
 	{
-		
-		/*String formattedDate = new SimpleDateFormat("dd/MM/yyyy, Ka").format(userDate);
-
-		String info = String.format("User Submission: id= %d%nUsername = %s%nEmail = %s%nCreated: %s", 
-				user.getUserId(), user.getUsername(), user.getEmail(), formattedDate);
-		log.info(info);*/
-	
 		if(result.hasErrors())
 		{
 			return "register?error";
@@ -54,6 +59,5 @@ public class RegisterController {
 			model.addAttribute("message", "Saved user details");
 			return "results";
 		}
-
 	}
 }

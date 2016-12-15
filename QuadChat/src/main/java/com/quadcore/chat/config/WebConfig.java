@@ -8,6 +8,14 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.mvc.WebContentInterceptor;
 
+/**
+ * The file that configures the Spring MVC settings, to user preference
+ * <p>
+ * @author Quadcore
+ * @since 10/4/16
+ * @version 2.0
+ * @see WebMvcConfigurerAdapter
+ */
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {
 

@@ -17,6 +17,16 @@ import com.quadcore.chat.model.User;
 import com.quadcore.chat.model.UserRole;
 import com.quadcore.chat.repository.UserRepository;
 
+/**
+ * Authenticates a database User for application login
+ * <p>
+ * @author Quadcore
+ * @since 12/12/16
+ * @version 2.0
+ * @category Service
+ * @see UserDetailsService
+ *
+ */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 

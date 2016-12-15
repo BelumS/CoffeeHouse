@@ -16,7 +16,17 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
-//Models a User table from the database
+/**
+ * Models the "Users" table from the database
+ * <p>
+ * @author Quadcore
+ * @since 11/22/16
+ * @version 2.0
+ * @category Spring MVC - Model
+ * @category Hibernate/JPA - Entity
+ * @see src/main/resources/coffeehouse-schema.sql
+ *
+ */
 @Entity
 @Table(name = "Users")
 public class User {

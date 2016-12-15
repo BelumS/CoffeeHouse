@@ -7,6 +7,14 @@ import org.springframework.web.socket.config.annotation.AbstractWebSocketMessage
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 
+/**
+ * The file that configures the WebSocket using Java Annotations
+ * <p>
+ * @author Quadcore
+ * @version 1.0
+ * @see AbstractWebSocketMessageBrokerConfigurer
+ *
+ */
 @Configuration
 @EnableWebSocketMessageBroker
 @ComponentScan(basePackages = "com.quadcore.chat.controller")

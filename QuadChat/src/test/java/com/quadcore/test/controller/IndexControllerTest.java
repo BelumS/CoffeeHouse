@@ -8,6 +8,16 @@ import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;
 import com.quadcore.chat.controller.IndexController;
 
+/**
+ * Testing the Spring MVC - Index Controller
+ * <p>
+ * @author Quadcore
+ * @since 11/21/16
+ * @version 2.0
+ * @category Test
+ * @see IndexController
+ *
+ */
 public class IndexControllerTest {
 	
 	@Test
@@ -18,8 +28,6 @@ public class IndexControllerTest {
 		mockMvc.perform(get("/"))
 				.andExpect(view().name("index"))
 				.andExpect(status().isOk())
-				.andDo(print()); //HTTPStatus = 200
-			
+				.andDo(print());
 	}
-
 }
