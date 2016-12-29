@@ -1,16 +1,11 @@
 package com.quadcore.chat.service;
 
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.quadcore.chat.model.Role;
 import com.quadcore.chat.model.User;
 import com.quadcore.chat.model.UserRole;
 import com.quadcore.chat.repository.RoleRepository;

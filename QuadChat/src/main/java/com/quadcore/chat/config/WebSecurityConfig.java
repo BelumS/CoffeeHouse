@@ -42,13 +42,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.formLogin()
 		.loginPage("/login")
 		.defaultSuccessUrl("/", true)
-		.failureUrl("/login?error")
+		.failureUrl("/login?error=true")
 		.permitAll()
 			.and()
 		//Setup the logging out functionality
 		.logout()
 		.logoutUrl("/logout")
-		.logoutSuccessUrl("/login?logout")
+		.logoutSuccessUrl("/login?logout=true")
 		.permitAll()
 			.and()
 		//Setup the access denied page for invalid permissions

@@ -1,49 +1,112 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-    <head>
-        <title>Coffee House - Admin</title>
-        <link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}"/>
-    <meta charset="utf8"/>
-<meta name="viewport" content="width=device-width"/>
-    </head>
-    <body>
-        <div class="container">
-            <noscript>
-                <h2 style="color: #ff0000">
-                    Seems your browser doesn't support Javascript!<br />
-                    Websocket relies on Javascript being enabled.
-                    Please enable Javascript and reload this page!
-                </h2>
-            </noscript>
-            <header>
-                <h1>Welcome to the Coffee House!</h1>
-            </header>
-            
-            <div sec:authorize="isAuthenticated()">
-            	Hello, <span sec:authentication="name">someone</span>
-            </div>
-			
-            <nav class="site-nav">
-                <ul>
-                	<li><a th:href="@{/}">Home</a></li>
-                    <li><a th:href="@{/chat}">Chatroom</a></li>
-                  <!-- <li><a href="users.html" th:href="@{/user/users}">Manage Users</a></li> -->
-                    <!-- <li><a th:href="#">Lobbies</a></li>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<title>Coffee House - Admin</title>
+<link rel="stylesheet" href="../static/css/main.css"
+	th:href="@{/css/main.css}" />
+<meta charset="utf8" />
+<meta name="viewport" content="width=device-width" />
+</head>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+	type="text/javascript"></script>
+
+<body>
+	<div class="container">
+		<header>
+			<h1>Welcome to the Coffee House!</h1>
+		</header>
+
+		<div sec:authorize="isAuthenticated()">
+			Hello, <span sec:authentication="name">someone</span>
+		</div>
+
+		<nav class="site-nav">
+			<ul>
+				<li><a th:href="@{/}">Home</a></li>
+				<li><a th:href="@{/chat}">Chatroom</a></li>
+				<!-- <li><a href="users.html" th:href="@{/user/users}">Manage Users</a></li> -->
+				<!-- <li><a th:href="#">Lobbies</a></li>
                     <li><a th:href="#">Settings</a></li> -->
-                    <li sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/admin}">Admin</a></li>
-                </ul>
-                    <form th:action="@{/logout}" method="post">
-                   	 <input id="logout-btn" type="submit" value="Log Out"/>
-                    </form>
-            </nav>
-            
-            <section id="admin-main-content">
-            </section>
-            
-            <aside id="user-list">
-            </aside>
-     
-            <footer class="clear">Coffee House &copy; FALL 2016</footer>
-        </div>
-    </body>
+				<li sec:authorize="hasRole('ROLE_ADMIN')"><a
+					th:href="@{/admin}">Admin</a></li>
+			</ul>
+			<form th:action="@{/logout}" method="post" action="">
+				<input id="logout-btn" type="submit" value="Log Out" />
+			</form>
+		</nav>
+
+		<button id="createUserBtn">Create User</button>
+		<!-- display registration form -->
+		<section id="user-admin-content">
+			<!-- Show list of users -->
+			<table>
+				<caption>Current User Info</caption>
+				<thead>
+					<tr>
+						<th>Username</th>
+						<th>Email</th>
+						<th>Created</th>
+						<th>Modified</th>
+						<th colspan="2">Options</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Test</td>
+						<td>Test</td>
+						<td>Test</td>
+						<td>Test</td>
+						<td>
+							<button class="editBtn">Edit</button>
+						</td>
+						<td>
+							<button class="deleteBtn">Delete</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<!-- Add roles to a user -->
+			<form action="">
+				<fieldset>
+					<legend>User Roles</legend>
+					<select>
+						<option>Admin</option>
+						<option>DBA</option>
+						<option selected>Chat Moderator</option>
+					</select>
+					<button>Add Role(s)</button>
+					<button>Remove Role(s)</button>
+				</fieldset>
+			</form>
+		</section>
+		<aside>
+			<!-- prereq: show a list of strings 
+            		<div th:with="strList = ${ {'X', 'Y', 'Z'} }">
+            			<ul>
+            				<li th:each="s : ${strList}" th:text="|${s}|"></li>
+            			</ul>
+            		</div>
+            		 prereq: show a list of dates
+            		<select>
+  						<option th:each="year : ${#numbers.sequence(1900, #dates.year(#dates.createNow()))}"
+      					th:value="${year}" th:text="${year}">
+  						</option>
+					</select>
+            		-->
+		</aside>
+		<footer class="clear">Coffee House &copy; FALL 2016</footer>
+	</div>
+	<script type="text/javascript">
+        $(document).ready(function() {
+          //alert("document ready!");
+          $('.editBtn').click(function() {
+            $(this).html($(this).html() == 'Edit' ? 'Modify' : 'Edit');
+          });
+        });
+
+      </script>
+</body>
 </html>

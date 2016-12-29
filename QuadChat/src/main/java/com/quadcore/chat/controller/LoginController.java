@@ -42,7 +42,7 @@ public class LoginController {
 	public String executeLogin(@Valid LoginForm loginForm, BindingResult bindingResult)
 	{
 		if(bindingResult.hasErrors()) {
-			return "login?error";
+			return "login?error=true";
 		}
 		return "redirect:/";
 	}
@@ -50,6 +50,6 @@ public class LoginController {
 	@PostMapping("/logout")
 	public String executeLogout()
 	{
-		return "/login?logout";
+		return "/login?logout=true";
 	}
 }

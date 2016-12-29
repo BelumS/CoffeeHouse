@@ -3,8 +3,6 @@ package com.quadcore.chat.model;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.quadcore.chat.model.User;
-
 /**
  * Holds the validation rules for the Login form fields
  * <p>

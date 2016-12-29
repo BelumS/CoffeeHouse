@@ -69,7 +69,7 @@ public class User {
 		{
 			for(UserRole role : userRole)
 			{
-				result += String.format("User Role[role_id=%d, role_name='%s']%n", 
+				result += String.format("\nUser Role(s)[role_id=%d, role_name='%s']%n", 
 						role.getRole().getRoleId(), role.getRole().getRoleName());
 			}
 		}

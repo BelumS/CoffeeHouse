@@ -29,7 +29,7 @@ import com.quadcore.chat.service.UserService;
 @Controller
 public class RegisterController {
 
-	Logger log = LoggerFactory.getLogger(this.getClass());
+	private final Logger log = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	private UserService userService;
