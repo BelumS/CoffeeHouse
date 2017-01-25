@@ -1043,3 +1043,679 @@ org.springframework.expression.spel.SpelEvaluationException: EL1011E:(pos 8): Me
 2016-12-28 12:43:12.890  INFO 3374 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
 2016-12-28 12:43:12.893  INFO 3374 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
 2016-12-28 12:43:12.896  INFO 3374 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-01-04 08:24:06.478  INFO 4499 --- [restartedMain] com.quadcore.chat.ChatroomApplication    : Starting ChatroomApplication on belum-NV59C with PID 4499 (started by belum in /home/belum/git/Personal Web Application/QuadChat)
+2017-01-04 08:24:06.494  INFO 4499 --- [restartedMain] com.quadcore.chat.ChatroomApplication    : No active profile set, falling back to default profiles: default
+2017-01-04 08:24:07.606  INFO 4499 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5a42405d: startup date [Wed Jan 04 08:24:07 CST 2017]; root of context hierarchy
+2017-01-04 08:24:12.104  INFO 4499 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ed03ff74] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-01-04 08:24:13.266  INFO 4499 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-01-04 08:24:13.298  INFO 4499 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-01-04 08:24:13.301  INFO 4499 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.5
+2017-01-04 08:24:13.610  INFO 4499 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-01-04 08:24:13.612  INFO 4499 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 6012 ms
+2017-01-04 08:24:14.445  INFO 4499 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-01-04 08:24:14.446  INFO 4499 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-01-04 08:24:14.447  INFO 4499 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-01-04 08:24:14.447  INFO 4499 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-01-04 08:24:14.454  INFO 4499 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-01-04 08:24:14.455  INFO 4499 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2017-01-04 08:24:14.458  INFO 4499 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-01-04 08:24:14.464  INFO 4499 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'webServlet' to [/h2-console/*]
+2017-01-04 08:24:15.363  INFO 4499 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-01-04 08:24:18.061  INFO 4499 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-01-04 08:24:20.098 DEBUG 4499 --- [restartedMain] org.hibernate.SQL                        : select role0_.role_id as role_id1_0_, role0_.role_name as role_nam2_0_ from roles role0_ where role0_.role_name=?
+2017-01-04 08:24:20.118 TRACE 4499 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_ADMIN]
+2017-01-04 08:24:20.233 DEBUG 4499 --- [restartedMain] org.hibernate.SQL                        : insert into roles (role_id, role_name) values (null, ?)
+2017-01-04 08:24:20.236 TRACE 4499 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_USER]
+2017-01-04 08:24:20.290 DEBUG 4499 --- [restartedMain] org.hibernate.SQL                        : insert into roles (role_id, role_name) values (null, ?)
+2017-01-04 08:24:20.291 TRACE 4499 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_ADMIN]
+2017-01-04 08:24:20.477 DEBUG 4499 --- [restartedMain] org.hibernate.SQL                        : insert into users (user_id, activated, created_date, user_email, password, username) values (null, ?, ?, ?, ?, ?)
+2017-01-04 08:24:20.479 TRACE 4499 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BOOLEAN] - [true]
+2017-01-04 08:24:20.481 TRACE 4499 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DATE] - [Wed Jan 04 08:24:20 CST 2017]
+2017-01-04 08:24:20.484 TRACE 4499 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [coffeeadmin@coffee.net]
+2017-01-04 08:24:20.485 TRACE 4499 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [$2a$10$dAd6.c.20TX8C61aW/N40.B8FjPPHGkyoc77ndbRpIc63dRUHuRqC]
+2017-01-04 08:24:20.487 TRACE 4499 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [coffeeadmin]
+2017-01-04 08:24:20.504 DEBUG 4499 --- [restartedMain] org.hibernate.SQL                        : select userrole0_.role_id as role_id2_1_0_, userrole0_.user_id as user_id1_1_0_ from user_roles userrole0_ where userrole0_.role_id=? and userrole0_.user_id=?
+2017-01-04 08:24:20.508 TRACE 4499 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [2]
+2017-01-04 08:24:20.509 TRACE 4499 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [BIGINT] - [1]
+2017-01-04 08:24:20.525 DEBUG 4499 --- [restartedMain] org.hibernate.SQL                        : insert into user_roles (role_id, user_id) values (?, ?)
+2017-01-04 08:24:20.526 TRACE 4499 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [2]
+2017-01-04 08:24:20.527 TRACE 4499 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [BIGINT] - [1]
+2017-01-04 08:24:21.787  INFO 4499 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@32620f63, org.springframework.security.web.context.SecurityContextPersistenceFilter@422f8949, org.springframework.security.web.header.HeaderWriterFilter@5c981a66, org.springframework.security.web.authentication.logout.LogoutFilter@123f08b5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4aea5b4c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@849a84d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@698c8dbf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e2e1b1c, org.springframework.security.web.session.SessionManagementFilter@e1e5579, org.springframework.security.web.access.ExceptionTranslationFilter@6c7105ed, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@795a1938]
+2017-01-04 08:24:21.827  INFO 4499 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/h2-console/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@347faa58, org.springframework.security.web.context.SecurityContextPersistenceFilter@1c60461b, org.springframework.security.web.header.HeaderWriterFilter@11c34d9f, org.springframework.security.web.authentication.logout.LogoutFilter@5e2c191c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@499ac08c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a9cd24f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5138d336, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5ab34792, org.springframework.security.web.session.SessionManagementFilter@14272c58, org.springframework.security.web.access.ExceptionTranslationFilter@6e1515e5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@344942c6]
+2017-01-04 08:24:21.958  INFO 4499 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService  'clientInboundChannelExecutor'
+2017-01-04 08:24:21.976  INFO 4499 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService  'clientOutboundChannelExecutor'
+2017-01-04 08:24:22.014  INFO 4499 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'messageBrokerTaskScheduler'
+2017-01-04 08:24:22.131  INFO 4499 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped URL path [/chat/**] onto handler of type [class org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler]
+2017-01-04 08:24:22.166  INFO 4499 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService  'brokerChannelExecutor'
+2017-01-04 08:24:22.320  INFO 4499 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : Mapped "{[/chat],messageType=[MESSAGE]}" onto public com.quadcore.chat.dto.OutputMessage com.quadcore.chat.controller.ChatController.sendMessage(com.quadcore.chat.dto.Message)
+2017-01-04 08:24:22.643  INFO 4499 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5a42405d: startup date [Wed Jan 04 08:24:07 CST 2017]; root of context hierarchy
+2017-01-04 08:24:22.817  INFO 4499 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin],methods=[GET]}" onto public java.lang.String com.quadcore.chat.controller.AdminController.displayAdminPage()
+2017-01-04 08:24:22.819  INFO 4499 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/chat],methods=[GET]}" onto public java.lang.String com.quadcore.chat.controller.ChatController.getChatPage()
+2017-01-04 08:24:22.821  INFO 4499 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/ || /home],methods=[GET]}" onto public java.lang.String com.quadcore.chat.controller.IndexController.index()
+2017-01-04 08:24:22.826  INFO 4499 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[POST]}" onto public java.lang.String com.quadcore.chat.controller.LoginController.executeLogin(com.quadcore.chat.model.LoginForm,org.springframework.validation.BindingResult)
+2017-01-04 08:24:22.828  INFO 4499 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout],methods=[POST]}" onto public java.lang.String com.quadcore.chat.controller.LoginController.executeLogout()
+2017-01-04 08:24:22.829  INFO 4499 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.quadcore.chat.controller.LoginController.displayLoginPage(com.quadcore.chat.model.LoginForm,org.springframework.ui.Model)
+2017-01-04 08:24:22.831  INFO 4499 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[GET]}" onto public java.lang.String com.quadcore.chat.controller.RegisterController.registerForm(com.quadcore.chat.model.User,org.springframework.ui.Model)
+2017-01-04 08:24:22.831  INFO 4499 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[POST]}" onto public java.lang.String com.quadcore.chat.controller.RegisterController.submitRegisterForm(com.quadcore.chat.model.User,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-01-04 08:24:22.836  INFO 4499 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-01-04 08:24:22.836  INFO 4499 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-01-04 08:24:22.872  INFO 4499 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/home] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:24:22.872  INFO 4499 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:24:22.872  INFO 4499 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:24:22.873  INFO 4499 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/register] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:24:22.873  INFO 4499 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/chat] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:24:22.873  INFO 4499 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/errors/403] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:24:22.873  INFO 4499 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/admin] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:24:22.873  INFO 4499 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/results] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:24:23.515  INFO 4499 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-04 08:24:23.532  INFO 4499 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-04 08:24:23.617  INFO 4499 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-04 08:24:25.790  INFO 4499 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2017-01-04 08:24:25.983  INFO 4499 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-01-04 08:24:26.003  INFO 4499 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-01-04 08:24:26.004  INFO 4499 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2017-01-04 08:24:26.004  INFO 4499 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2017-01-04 08:24:26.006  INFO 4499 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2017-01-04 08:24:26.206  INFO 4499 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-01-04 08:24:26.220  INFO 4499 --- [restartedMain] com.quadcore.chat.ChatroomApplication    : Started ChatroomApplication in 21.887 seconds (JVM running for 23.747)
+2017-01-04 08:24:35.503  INFO 4499 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-01-04 08:24:35.504  INFO 4499 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-01-04 08:24:35.553  INFO 4499 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 47 ms
+2017-01-04 08:25:22.162  INFO 4499 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2017-01-04 08:28:10.246 DEBUG 4499 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select user0_.user_id as user_id1_2_, user0_.activated as activate2_2_, user0_.created_date as created_3_2_, user0_.user_email as user_ema4_2_, user0_.password as password5_2_, user0_.username as username6_2_ from users user0_ where user0_.username=?
+2017-01-04 08:28:10.247 TRACE 4499 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [coffeeadmin]
+2017-01-04 08:28:10.252 TRACE 4499 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([user_id1_2_] : [BIGINT]) - [1]
+2017-01-04 08:28:10.257 TRACE 4499 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([activate2_2_] : [BOOLEAN]) - [true]
+2017-01-04 08:28:10.258 TRACE 4499 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([created_3_2_] : [DATE]) - [2017-01-04]
+2017-01-04 08:28:10.260 TRACE 4499 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([user_ema4_2_] : [VARCHAR]) - [coffeeadmin@coffee.net]
+2017-01-04 08:28:10.260 TRACE 4499 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password5_2_] : [VARCHAR]) - [$2a$10$dAd6.c.20TX8C61aW/N40.B8FjPPHGkyoc77ndbRpIc63dRUHuRqC]
+2017-01-04 08:28:10.261 TRACE 4499 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([username6_2_] : [VARCHAR]) - [coffeeadmin]
+2017-01-04 08:28:10.268 DEBUG 4499 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select userroles0_.user_id as user_id1_1_0_, userroles0_.role_id as role_id2_1_0_, userroles0_.role_id as role_id2_1_1_, userroles0_.user_id as user_id1_1_1_, role1_.role_id as role_id1_0_2_, role1_.role_name as role_nam2_0_2_ from user_roles userroles0_ inner join roles role1_ on userroles0_.role_id=role1_.role_id where userroles0_.user_id=?
+2017-01-04 08:28:10.272 TRACE 4499 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2017-01-04 08:28:10.306 TRACE 4499 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role_id2_1_1_] : [BIGINT]) - [2]
+2017-01-04 08:28:10.306 TRACE 4499 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([user_id1_1_1_] : [BIGINT]) - [1]
+2017-01-04 08:28:10.307 TRACE 4499 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role_id1_0_2_] : [BIGINT]) - [2]
+2017-01-04 08:28:10.307 TRACE 4499 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role_nam2_0_2_] : [VARCHAR]) - [ROLE_ADMIN]
+2017-01-04 08:28:10.309 TRACE 4499 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([user_id1_1_0_] : [BIGINT]) - [1]
+2017-01-04 08:28:10.310 TRACE 4499 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role_id2_1_0_] : [BIGINT]) - [2]
+2017-01-04 08:28:10.311 TRACE 4499 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([user_id1_1_0_] : [BIGINT]) - [1]
+2017-01-04 08:28:17.823 ERROR 4499 --- [http-nio-8080-exec-3] o.thymeleaf.templateparser.ErrorHandler  : [THYMELEAF][http-nio-8080-exec-3] Fatal error during parsing
+
+org.xml.sax.SAXParseException: Attribute name "selected" associated with an element type "option" must be followed by the ' = ' character.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203) ~[na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177) ~[na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400) [na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327) [na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472) [na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1531) [na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1315) [na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784) [na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602) [na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505) [na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841) [na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770) [na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141) [na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213) [na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643) [na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327) [na:1.8.0_111]
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.doParse(AbstractNonValidatingSAXTemplateParser.java:209) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplateUsingPool(AbstractNonValidatingSAXTemplateParser.java:134) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplate(AbstractNonValidatingSAXTemplateParser.java:116) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335) [thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190) [thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1257) [spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037) [spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980) [spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897) [spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) [spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) [spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) [spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilterInternal(ResourceUrlEncodingFilter.java:53) [spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:169) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:121) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) [spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346) [spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262) [spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:89) [spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77) [spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) [spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_111]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_111]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_111]
+
+2017-01-04 08:28:17.826 ERROR 4499 --- [http-nio-8080-exec-3] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-3] Exception processing template "/admin": Exception parsing document: template="/admin", line 101 - column 23
+2017-01-04 08:28:17.834 ERROR 4499 --- [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Exception parsing document: template="/admin", line 101 - column 23] with root cause
+
+org.xml.sax.SAXParseException: Attribute name "selected" associated with an element type "option" must be followed by the ' = ' character.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203) ~[na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177) ~[na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400) ~[na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327) ~[na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472) ~[na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1531) ~[na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1315) ~[na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784) ~[na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602) ~[na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505) ~[na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841) ~[na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770) ~[na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141) ~[na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213) ~[na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643) ~[na:1.8.0_111]
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327) ~[na:1.8.0_111]
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.doParse(AbstractNonValidatingSAXTemplateParser.java:209) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplateUsingPool(AbstractNonValidatingSAXTemplateParser.java:134) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplate(AbstractNonValidatingSAXTemplateParser.java:116) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1257) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilterInternal(ResourceUrlEncodingFilter.java:53) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:169) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:121) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:89) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_111]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_111]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_111]
+
+2017-01-04 08:30:02.416 ERROR 4499 --- [http-nio-8080-exec-6] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-6] Exception processing template "/admin": Error during execution of processor 'org.thymeleaf.spring4.processor.attr.SpringInputGeneralFieldAttrProcessor' (/admin:50)
+2017-01-04 08:30:02.419 ERROR 4499 --- [http-nio-8080-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateProcessingException: Error during execution of processor 'org.thymeleaf.spring4.processor.attr.SpringInputGeneralFieldAttrProcessor' (/admin:50)] with root cause
+
+java.lang.IllegalStateException: Neither BindingResult nor plain target object for bean name 'user' available as request attribute
+	at org.springframework.web.servlet.support.BindStatus.<init>(BindStatus.java:144) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.thymeleaf.spring4.util.FieldUtils.getBindStatusFromParsedExpression(FieldUtils.java:401) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.util.FieldUtils.getBindStatus(FieldUtils.java:328) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.util.FieldUtils.getBindStatus(FieldUtils.java:294) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.processor.attr.AbstractSpringFieldAttrProcessor.processAttribute(AbstractSpringFieldAttrProcessor.java:98) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.attr.AbstractAttrProcessor.doProcess(AbstractAttrProcessor.java:87) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.processor.AbstractProcessor.process(AbstractProcessor.java:212) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.applyNextProcessor(Node.java:1017) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:972) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.computeNextChild(NestableNode.java:695) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.NestableNode.doAdditionalProcess(NestableNode.java:668) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Node.processNode(Node.java:990) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.dom.Document.process(Document.java:93) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1155) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1257) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1037) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:980) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilterInternal(ResourceUrlEncodingFilter.java:53) ~[spring-webmvc-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:169) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:121) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177) ~[spring-security-web-4.1.3.RELEASE.jar:4.1.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:89) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.3.RELEASE.jar:4.3.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_111]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_111]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.5.jar:8.5.5]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_111]
+
+2017-01-04 08:31:30.124  INFO 4499 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-01-04 08:31:30.124  INFO 4499 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5a42405d: startup date [Wed Jan 04 08:24:07 CST 2017]; root of context hierarchy
+2017-01-04 08:31:30.138  INFO 4499 --- [RMI TCP Connection(2)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2017-01-04 08:31:30.154  INFO 4499 --- [RMI TCP Connection(2)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2017-01-04 08:31:30.155  INFO 4499 --- [RMI TCP Connection(2)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2017-01-04 08:31:30.155  INFO 4499 --- [RMI TCP Connection(2)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2017-01-04 08:31:30.157  INFO 4499 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-01-04 08:31:30.159  INFO 4499 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2017-01-04 08:31:30.160  INFO 4499 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2017-01-04 08:31:30.161  INFO 4499 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2017-01-04 08:31:30.162  INFO 4499 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2017-01-04 08:31:30.164  INFO 4499 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-01-04 08:46:46.722  INFO 5087 --- [restartedMain] com.quadcore.chat.ChatroomApplication    : Starting ChatroomApplication on belum-NV59C with PID 5087 (started by belum in /home/belum/git/Personal Web Application/QuadChat)
+2017-01-04 08:46:46.729  INFO 5087 --- [restartedMain] com.quadcore.chat.ChatroomApplication    : No active profile set, falling back to default profiles: default
+2017-01-04 08:46:47.354  INFO 5087 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2866f3f3: startup date [Wed Jan 04 08:46:47 CST 2017]; root of context hierarchy
+2017-01-04 08:46:51.477  INFO 5087 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9878a1d0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-01-04 08:46:52.580  INFO 5087 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-01-04 08:46:52.608  INFO 5087 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-01-04 08:46:52.610  INFO 5087 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.5
+2017-01-04 08:46:52.864  INFO 5087 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-01-04 08:46:52.865  INFO 5087 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5518 ms
+2017-01-04 08:46:53.344  INFO 5087 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-01-04 08:46:53.345  INFO 5087 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-01-04 08:46:53.345  INFO 5087 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-01-04 08:46:53.346  INFO 5087 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-01-04 08:46:53.349  INFO 5087 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-01-04 08:46:53.349  INFO 5087 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2017-01-04 08:46:53.350  INFO 5087 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-01-04 08:46:53.353  INFO 5087 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'webServlet' to [/h2-console/*]
+2017-01-04 08:46:54.062  INFO 5087 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-01-04 08:46:56.295  INFO 5087 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-01-04 08:46:58.683 DEBUG 5087 --- [restartedMain] org.hibernate.SQL                        : select role0_.role_id as role_id1_0_, role0_.role_name as role_nam2_0_ from roles role0_ where role0_.role_name=?
+2017-01-04 08:46:58.696 TRACE 5087 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_ADMIN]
+2017-01-04 08:46:58.814 DEBUG 5087 --- [restartedMain] org.hibernate.SQL                        : insert into roles (role_id, role_name) values (null, ?)
+2017-01-04 08:46:58.818 TRACE 5087 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_USER]
+2017-01-04 08:46:58.859 DEBUG 5087 --- [restartedMain] org.hibernate.SQL                        : insert into roles (role_id, role_name) values (null, ?)
+2017-01-04 08:46:58.861 TRACE 5087 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_ADMIN]
+2017-01-04 08:46:59.146 DEBUG 5087 --- [restartedMain] org.hibernate.SQL                        : insert into users (user_id, activated, created_date, user_email, password, username) values (null, ?, ?, ?, ?, ?)
+2017-01-04 08:46:59.149 TRACE 5087 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BOOLEAN] - [true]
+2017-01-04 08:46:59.151 TRACE 5087 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DATE] - [Wed Jan 04 08:46:59 CST 2017]
+2017-01-04 08:46:59.180 TRACE 5087 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [coffeeadmin@coffee.net]
+2017-01-04 08:46:59.181 TRACE 5087 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [$2a$10$wxGKYUNxKupWgou.USKF4uJmkQ9o..KEWRj4ivnqlKSucvgLHZOnm]
+2017-01-04 08:46:59.182 TRACE 5087 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [coffeeadmin]
+2017-01-04 08:46:59.198 DEBUG 5087 --- [restartedMain] org.hibernate.SQL                        : select userrole0_.role_id as role_id2_1_0_, userrole0_.user_id as user_id1_1_0_ from user_roles userrole0_ where userrole0_.role_id=? and userrole0_.user_id=?
+2017-01-04 08:46:59.200 TRACE 5087 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [2]
+2017-01-04 08:46:59.201 TRACE 5087 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [BIGINT] - [1]
+2017-01-04 08:46:59.219 DEBUG 5087 --- [restartedMain] org.hibernate.SQL                        : insert into user_roles (role_id, user_id) values (?, ?)
+2017-01-04 08:46:59.221 TRACE 5087 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [2]
+2017-01-04 08:46:59.221 TRACE 5087 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [BIGINT] - [1]
+2017-01-04 08:47:00.113  INFO 5087 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@670172aa, org.springframework.security.web.context.SecurityContextPersistenceFilter@29bb840, org.springframework.security.web.header.HeaderWriterFilter@15795819, org.springframework.security.web.authentication.logout.LogoutFilter@157b33a8, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4bb1a1ee, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4fc91231, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@c94850c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ddf90ee, org.springframework.security.web.session.SessionManagementFilter@3388aa51, org.springframework.security.web.access.ExceptionTranslationFilter@6f6b47b6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@894433a]
+2017-01-04 08:47:00.142  INFO 5087 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/h2-console/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@13f476a5, org.springframework.security.web.context.SecurityContextPersistenceFilter@49439c2b, org.springframework.security.web.header.HeaderWriterFilter@3c555a59, org.springframework.security.web.authentication.logout.LogoutFilter@74c9391f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1bccf8e7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5d558ba5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b4485c4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2cbb53cb, org.springframework.security.web.session.SessionManagementFilter@7bcc1a8e, org.springframework.security.web.access.ExceptionTranslationFilter@ee34c3a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@77af0eb6]
+2017-01-04 08:47:00.224  INFO 5087 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService  'clientInboundChannelExecutor'
+2017-01-04 08:47:00.240  INFO 5087 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService  'clientOutboundChannelExecutor'
+2017-01-04 08:47:00.264  INFO 5087 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'messageBrokerTaskScheduler'
+2017-01-04 08:47:00.362  INFO 5087 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped URL path [/chat/**] onto handler of type [class org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler]
+2017-01-04 08:47:00.383  INFO 5087 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService  'brokerChannelExecutor'
+2017-01-04 08:47:00.485  INFO 5087 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : Mapped "{[/chat],messageType=[MESSAGE]}" onto public com.quadcore.chat.dto.OutputMessage com.quadcore.chat.controller.ChatController.sendMessage(com.quadcore.chat.dto.Message)
+2017-01-04 08:47:00.692  INFO 5087 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2866f3f3: startup date [Wed Jan 04 08:46:47 CST 2017]; root of context hierarchy
+2017-01-04 08:47:00.824  INFO 5087 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin],methods=[POST]}" onto public java.lang.String com.quadcore.chat.controller.AdminController.submitRegisterForm(com.quadcore.chat.model.User,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-01-04 08:47:00.826  INFO 5087 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin],methods=[GET]}" onto public java.lang.String com.quadcore.chat.controller.AdminController.displayAdminPage(com.quadcore.chat.model.User,org.springframework.ui.Model)
+2017-01-04 08:47:00.827  INFO 5087 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/chat],methods=[GET]}" onto public java.lang.String com.quadcore.chat.controller.ChatController.getChatPage()
+2017-01-04 08:47:00.828  INFO 5087 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/ || /home],methods=[GET]}" onto public java.lang.String com.quadcore.chat.controller.IndexController.index()
+2017-01-04 08:47:00.830  INFO 5087 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout],methods=[POST]}" onto public java.lang.String com.quadcore.chat.controller.LoginController.executeLogout()
+2017-01-04 08:47:00.831  INFO 5087 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.quadcore.chat.controller.LoginController.displayLoginPage(com.quadcore.chat.model.LoginForm,org.springframework.ui.Model)
+2017-01-04 08:47:00.832  INFO 5087 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[POST]}" onto public java.lang.String com.quadcore.chat.controller.LoginController.executeLogin(com.quadcore.chat.model.LoginForm,org.springframework.validation.BindingResult)
+2017-01-04 08:47:00.833  INFO 5087 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[POST]}" onto public java.lang.String com.quadcore.chat.controller.RegisterController.submitRegisterForm(com.quadcore.chat.model.User,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-01-04 08:47:00.834  INFO 5087 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[GET]}" onto public java.lang.String com.quadcore.chat.controller.RegisterController.registerForm(com.quadcore.chat.model.User,org.springframework.ui.Model)
+2017-01-04 08:47:00.839  INFO 5087 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-01-04 08:47:00.840  INFO 5087 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-01-04 08:47:00.873  INFO 5087 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/home] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:47:00.873  INFO 5087 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:47:00.873  INFO 5087 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:47:00.873  INFO 5087 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/register] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:47:00.873  INFO 5087 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/chat] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:47:00.874  INFO 5087 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/errors/403] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:47:00.874  INFO 5087 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/admin] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:47:00.874  INFO 5087 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/results] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:47:01.431  INFO 5087 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-04 08:47:01.431  INFO 5087 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-04 08:47:01.524  INFO 5087 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-04 08:47:03.260  INFO 5087 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2017-01-04 08:47:03.409  INFO 5087 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-01-04 08:47:03.427  INFO 5087 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-01-04 08:47:03.428  INFO 5087 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2017-01-04 08:47:03.428  INFO 5087 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2017-01-04 08:47:03.430  INFO 5087 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2017-01-04 08:47:03.599  INFO 5087 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-01-04 08:47:03.610  INFO 5087 --- [restartedMain] com.quadcore.chat.ChatroomApplication    : Started ChatroomApplication in 17.828 seconds (JVM running for 19.614)
+2017-01-04 08:47:45.758  INFO 5087 --- [Thread-6] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2866f3f3: startup date [Wed Jan 04 08:46:47 CST 2017]; root of context hierarchy
+2017-01-04 08:47:45.763  INFO 5087 --- [Thread-6] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2017-01-04 08:47:45.765  INFO 5087 --- [Thread-6] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2017-01-04 08:47:45.766  INFO 5087 --- [Thread-6] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2017-01-04 08:47:45.767  INFO 5087 --- [Thread-6] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2017-01-04 08:47:45.771  INFO 5087 --- [Thread-6] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-01-04 08:47:45.776  INFO 5087 --- [Thread-6] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2017-01-04 08:47:45.777  INFO 5087 --- [Thread-6] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2017-01-04 08:47:45.778  INFO 5087 --- [Thread-6] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2017-01-04 08:47:45.780  INFO 5087 --- [Thread-6] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2017-01-04 08:47:45.783  INFO 5087 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-01-04 08:47:46.374  INFO 5087 --- [restartedMain] com.quadcore.chat.ChatroomApplication    : Starting ChatroomApplication on belum-NV59C with PID 5087 (started by belum in /home/belum/git/Personal Web Application/QuadChat)
+2017-01-04 08:47:46.375  INFO 5087 --- [restartedMain] com.quadcore.chat.ChatroomApplication    : No active profile set, falling back to default profiles: default
+2017-01-04 08:47:46.379  INFO 5087 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3114b862: startup date [Wed Jan 04 08:47:46 CST 2017]; root of context hierarchy
+2017-01-04 08:47:51.028  INFO 5164 --- [restartedMain] com.quadcore.chat.ChatroomApplication    : Starting ChatroomApplication on belum-NV59C with PID 5164 (started by belum in /home/belum/git/Personal Web Application/QuadChat)
+2017-01-04 08:47:51.034  INFO 5164 --- [restartedMain] com.quadcore.chat.ChatroomApplication    : No active profile set, falling back to default profiles: default
+2017-01-04 08:47:51.614  INFO 5164 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@60b42f63: startup date [Wed Jan 04 08:47:51 CST 2017]; root of context hierarchy
+2017-01-04 08:47:55.571  INFO 5164 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$aaa1cef1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-01-04 08:47:56.610  INFO 5164 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-01-04 08:47:56.646  INFO 5164 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-01-04 08:47:56.648  INFO 5164 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.5
+2017-01-04 08:47:56.797  INFO 5164 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-01-04 08:47:56.798  INFO 5164 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5189 ms
+2017-01-04 08:47:57.209  INFO 5164 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-01-04 08:47:57.210  INFO 5164 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-01-04 08:47:57.211  INFO 5164 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-01-04 08:47:57.211  INFO 5164 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-01-04 08:47:57.214  INFO 5164 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-01-04 08:47:57.215  INFO 5164 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'resourceUrlEncodingFilter' to: [/*]
+2017-01-04 08:47:57.215  INFO 5164 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-01-04 08:47:57.218  INFO 5164 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'webServlet' to [/h2-console/*]
+2017-01-04 08:47:57.752  INFO 5164 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-01-04 08:47:59.569  INFO 5164 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-01-04 08:48:01.005 DEBUG 5164 --- [restartedMain] org.hibernate.SQL                        : select role0_.role_id as role_id1_0_, role0_.role_name as role_nam2_0_ from roles role0_ where role0_.role_name=?
+2017-01-04 08:48:01.015 TRACE 5164 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_ADMIN]
+2017-01-04 08:48:01.111 DEBUG 5164 --- [restartedMain] org.hibernate.SQL                        : insert into roles (role_id, role_name) values (null, ?)
+2017-01-04 08:48:01.114 TRACE 5164 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_USER]
+2017-01-04 08:48:01.147 DEBUG 5164 --- [restartedMain] org.hibernate.SQL                        : insert into roles (role_id, role_name) values (null, ?)
+2017-01-04 08:48:01.148 TRACE 5164 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_ADMIN]
+2017-01-04 08:48:01.413 DEBUG 5164 --- [restartedMain] org.hibernate.SQL                        : insert into users (user_id, activated, created_date, user_email, password, username) values (null, ?, ?, ?, ?, ?)
+2017-01-04 08:48:01.417 TRACE 5164 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BOOLEAN] - [true]
+2017-01-04 08:48:01.418 TRACE 5164 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DATE] - [Wed Jan 04 08:48:01 CST 2017]
+2017-01-04 08:48:01.422 TRACE 5164 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [coffeeadmin@coffee.net]
+2017-01-04 08:48:01.423 TRACE 5164 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [$2a$10$eEwzzqj0sBYVjJwzGhc3iukC0BZvTIT6PJtN7q28hl66xopGZcWAu]
+2017-01-04 08:48:01.423 TRACE 5164 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [coffeeadmin]
+2017-01-04 08:48:01.438 DEBUG 5164 --- [restartedMain] org.hibernate.SQL                        : select userrole0_.role_id as role_id2_1_0_, userrole0_.user_id as user_id1_1_0_ from user_roles userrole0_ where userrole0_.role_id=? and userrole0_.user_id=?
+2017-01-04 08:48:01.441 TRACE 5164 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [2]
+2017-01-04 08:48:01.442 TRACE 5164 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [BIGINT] - [1]
+2017-01-04 08:48:01.457 DEBUG 5164 --- [restartedMain] org.hibernate.SQL                        : insert into user_roles (role_id, user_id) values (?, ?)
+2017-01-04 08:48:01.459 TRACE 5164 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [2]
+2017-01-04 08:48:01.460 TRACE 5164 --- [restartedMain] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [BIGINT] - [1]
+2017-01-04 08:48:02.355  INFO 5164 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@27d83056, org.springframework.security.web.context.SecurityContextPersistenceFilter@2b11f067, org.springframework.security.web.header.HeaderWriterFilter@58563197, org.springframework.security.web.authentication.logout.LogoutFilter@1eb7697a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4076f612, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1b5335ec, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@d7c7958, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3e7f5b03, org.springframework.security.web.session.SessionManagementFilter@10b45192, org.springframework.security.web.access.ExceptionTranslationFilter@4a9530d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6bb8184a]
+2017-01-04 08:48:02.386  INFO 5164 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/h2-console/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1dd21c27, org.springframework.security.web.context.SecurityContextPersistenceFilter@59028e5e, org.springframework.security.web.header.HeaderWriterFilter@e493c88, org.springframework.security.web.authentication.logout.LogoutFilter@794c8d73, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@44806c08, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2121b29d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@664b774d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3e7927c6, org.springframework.security.web.session.SessionManagementFilter@4dc66374, org.springframework.security.web.access.ExceptionTranslationFilter@247b940f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@72fd8c95]
+2017-01-04 08:48:02.488  INFO 5164 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService  'clientInboundChannelExecutor'
+2017-01-04 08:48:02.506  INFO 5164 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService  'clientOutboundChannelExecutor'
+2017-01-04 08:48:02.537  INFO 5164 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'messageBrokerTaskScheduler'
+2017-01-04 08:48:02.632  INFO 5164 --- [restartedMain] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped URL path [/chat/**] onto handler of type [class org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler]
+2017-01-04 08:48:02.660  INFO 5164 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService  'brokerChannelExecutor'
+2017-01-04 08:48:02.792  INFO 5164 --- [restartedMain] .WebSocketAnnotationMethodMessageHandler : Mapped "{[/chat],messageType=[MESSAGE]}" onto public com.quadcore.chat.dto.OutputMessage com.quadcore.chat.controller.ChatController.sendMessage(com.quadcore.chat.dto.Message)
+2017-01-04 08:48:03.078  INFO 5164 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@60b42f63: startup date [Wed Jan 04 08:47:51 CST 2017]; root of context hierarchy
+2017-01-04 08:48:03.266  INFO 5164 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin],methods=[POST]}" onto public java.lang.String com.quadcore.chat.controller.AdminController.submitUserForm(com.quadcore.chat.model.User,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-01-04 08:48:03.268  INFO 5164 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin],methods=[GET]}" onto public java.lang.String com.quadcore.chat.controller.AdminController.displayAdminPage(com.quadcore.chat.model.User,org.springframework.ui.Model)
+2017-01-04 08:48:03.269  INFO 5164 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/chat],methods=[GET]}" onto public java.lang.String com.quadcore.chat.controller.ChatController.getChatPage()
+2017-01-04 08:48:03.271  INFO 5164 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/ || /home],methods=[GET]}" onto public java.lang.String com.quadcore.chat.controller.IndexController.index()
+2017-01-04 08:48:03.273  INFO 5164 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout],methods=[POST]}" onto public java.lang.String com.quadcore.chat.controller.LoginController.executeLogout()
+2017-01-04 08:48:03.274  INFO 5164 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.quadcore.chat.controller.LoginController.displayLoginPage(com.quadcore.chat.model.LoginForm,org.springframework.ui.Model)
+2017-01-04 08:48:03.274  INFO 5164 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[POST]}" onto public java.lang.String com.quadcore.chat.controller.LoginController.executeLogin(com.quadcore.chat.model.LoginForm,org.springframework.validation.BindingResult)
+2017-01-04 08:48:03.276  INFO 5164 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[POST]}" onto public java.lang.String com.quadcore.chat.controller.RegisterController.submitRegisterForm(com.quadcore.chat.model.User,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-01-04 08:48:03.277  INFO 5164 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/register],methods=[GET]}" onto public java.lang.String com.quadcore.chat.controller.RegisterController.registerForm(com.quadcore.chat.model.User,org.springframework.ui.Model)
+2017-01-04 08:48:03.281  INFO 5164 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-01-04 08:48:03.282  INFO 5164 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-01-04 08:48:03.314  INFO 5164 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/home] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:48:03.314  INFO 5164 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:48:03.314  INFO 5164 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:48:03.315  INFO 5164 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/register] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:48:03.315  INFO 5164 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/chat] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:48:03.315  INFO 5164 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/errors/403] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:48:03.315  INFO 5164 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/admin] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:48:03.315  INFO 5164 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/results] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-04 08:48:03.719  INFO 5164 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-04 08:48:03.720  INFO 5164 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-04 08:48:03.810  INFO 5164 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-04 08:48:04.925  INFO 5164 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2017-01-04 08:48:05.089  INFO 5164 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-01-04 08:48:05.117  INFO 5164 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-01-04 08:48:05.118  INFO 5164 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2017-01-04 08:48:05.118  INFO 5164 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2017-01-04 08:48:05.122  INFO 5164 --- [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2017-01-04 08:48:05.216  INFO 5164 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-01-04 08:48:05.230  INFO 5164 --- [restartedMain] com.quadcore.chat.ChatroomApplication    : Started ChatroomApplication in 14.985 seconds (JVM running for 16.052)
+2017-01-04 08:48:20.231  INFO 5164 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-01-04 08:48:20.231  INFO 5164 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-01-04 08:48:20.254  INFO 5164 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 23 ms
+2017-01-04 08:48:40.231 DEBUG 5164 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select user0_.user_id as user_id1_2_, user0_.activated as activate2_2_, user0_.created_date as created_3_2_, user0_.user_email as user_ema4_2_, user0_.password as password5_2_, user0_.username as username6_2_ from users user0_ where user0_.username=?
+2017-01-04 08:48:40.233 TRACE 5164 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Belum]
+2017-01-04 08:48:40.236 DEBUG 5164 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select role0_.role_id as role_id1_0_, role0_.role_name as role_nam2_0_ from roles role0_ where role0_.role_name=?
+2017-01-04 08:48:40.237 TRACE 5164 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [ROLE_USER]
+2017-01-04 08:48:40.241 TRACE 5164 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role_id1_0_] : [BIGINT]) - [1]
+2017-01-04 08:48:40.248 TRACE 5164 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role_nam2_0_] : [VARCHAR]) - [ROLE_USER]
+2017-01-04 08:48:40.375 DEBUG 5164 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : insert into users (user_id, activated, created_date, user_email, password, username) values (null, ?, ?, ?, ?, ?)
+2017-01-04 08:48:40.376 TRACE 5164 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BOOLEAN] - [true]
+2017-01-04 08:48:40.377 TRACE 5164 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [DATE] - [Wed Jan 04 08:48:40 CST 2017]
+2017-01-04 08:48:40.377 TRACE 5164 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [belum@gmail.com]
+2017-01-04 08:48:40.377 TRACE 5164 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [$2a$10$ysDcn9XneqZj/1hTvxf5TO3hM86ABm6c3RIb64U.QLuNlPd5L5mBa]
+2017-01-04 08:48:40.378 TRACE 5164 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [Belum]
+2017-01-04 08:48:40.388 DEBUG 5164 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select userrole0_.role_id as role_id2_1_0_, userrole0_.user_id as user_id1_1_0_ from user_roles userrole0_ where userrole0_.role_id=? and userrole0_.user_id=?
+2017-01-04 08:48:40.389 TRACE 5164 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2017-01-04 08:48:40.389 TRACE 5164 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [BIGINT] - [2]
+2017-01-04 08:48:40.393 DEBUG 5164 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : insert into user_roles (role_id, user_id) values (?, ?)
+2017-01-04 08:48:40.394 TRACE 5164 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2017-01-04 08:48:40.394 TRACE 5164 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [BIGINT] - [2]
+2017-01-04 08:48:56.700 DEBUG 5164 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select user0_.user_id as user_id1_2_, user0_.activated as activate2_2_, user0_.created_date as created_3_2_, user0_.user_email as user_ema4_2_, user0_.password as password5_2_, user0_.username as username6_2_ from users user0_ where user0_.username=?
+2017-01-04 08:48:56.701 TRACE 5164 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [belum]
+2017-01-04 08:49:02.655  INFO 5164 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2017-01-04 08:49:05.016 DEBUG 5164 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select user0_.user_id as user_id1_2_, user0_.activated as activate2_2_, user0_.created_date as created_3_2_, user0_.user_email as user_ema4_2_, user0_.password as password5_2_, user0_.username as username6_2_ from users user0_ where user0_.username=?
+2017-01-04 08:49:05.017 TRACE 5164 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Belum]
+2017-01-04 08:49:05.018 TRACE 5164 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([user_id1_2_] : [BIGINT]) - [2]
+2017-01-04 08:49:05.020 TRACE 5164 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([activate2_2_] : [BOOLEAN]) - [true]
+2017-01-04 08:49:05.022 TRACE 5164 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([created_3_2_] : [DATE]) - [2017-01-04]
+2017-01-04 08:49:05.025 TRACE 5164 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([user_ema4_2_] : [VARCHAR]) - [belum@gmail.com]
+2017-01-04 08:49:05.025 TRACE 5164 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([password5_2_] : [VARCHAR]) - [$2a$10$ysDcn9XneqZj/1hTvxf5TO3hM86ABm6c3RIb64U.QLuNlPd5L5mBa]
+2017-01-04 08:49:05.025 TRACE 5164 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([username6_2_] : [VARCHAR]) - [Belum]
+2017-01-04 08:49:05.030 DEBUG 5164 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select userroles0_.user_id as user_id1_1_0_, userroles0_.role_id as role_id2_1_0_, userroles0_.role_id as role_id2_1_1_, userroles0_.user_id as user_id1_1_1_, role1_.role_id as role_id1_0_2_, role1_.role_name as role_nam2_0_2_ from user_roles userroles0_ inner join roles role1_ on userroles0_.role_id=role1_.role_id where userroles0_.user_id=?
+2017-01-04 08:49:05.034 TRACE 5164 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [2]
+2017-01-04 08:49:05.045 TRACE 5164 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role_id2_1_1_] : [BIGINT]) - [1]
+2017-01-04 08:49:05.045 TRACE 5164 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([user_id1_1_1_] : [BIGINT]) - [2]
+2017-01-04 08:49:05.045 TRACE 5164 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role_id1_0_2_] : [BIGINT]) - [1]
+2017-01-04 08:49:05.046 TRACE 5164 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role_nam2_0_2_] : [VARCHAR]) - [ROLE_USER]
+2017-01-04 08:49:05.048 TRACE 5164 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([user_id1_1_0_] : [BIGINT]) - [2]
+2017-01-04 08:49:05.049 TRACE 5164 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([role_id2_1_0_] : [BIGINT]) - [1]
+2017-01-04 08:49:05.049 TRACE 5164 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([user_id1_1_0_] : [BIGINT]) - [2]
+2017-01-04 08:52:01.293  INFO 5164 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-01-04 08:52:01.294  INFO 5164 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@60b42f63: startup date [Wed Jan 04 08:47:51 CST 2017]; root of context hierarchy
+2017-01-04 08:52:01.298  INFO 5164 --- [RMI TCP Connection(2)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2017-01-04 08:52:01.300  INFO 5164 --- [RMI TCP Connection(2)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2017-01-04 08:52:01.300  INFO 5164 --- [RMI TCP Connection(2)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2017-01-04 08:52:01.300  INFO 5164 --- [RMI TCP Connection(2)-127.0.0.1] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2017-01-04 08:52:01.302  INFO 5164 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-01-04 08:52:01.302  INFO 5164 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2017-01-04 08:52:01.303  INFO 5164 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2017-01-04 08:52:01.303  INFO 5164 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2017-01-04 08:52:01.304  INFO 5164 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2017-01-04 08:52:01.306  INFO 5164 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'

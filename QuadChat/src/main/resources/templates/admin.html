@@ -37,9 +37,7 @@
 			</form>
 		</nav>
 
-		<button id="createUserBtn">Create User</button>
-		<!-- display registration form -->
-		<section id="user-admin-content">
+		<section id="adminMainContent">
 			<!-- Show list of users -->
 			<table>
 				<caption>Current User Info</caption>
@@ -47,6 +45,7 @@
 					<tr>
 						<th>Username</th>
 						<th>Email</th>
+						<th>Role(s)</th>
 						<th>Created</th>
 						<th>Modified</th>
 						<th colspan="2">Options</th>
@@ -54,6 +53,7 @@
 				</thead>
 				<tbody>
 					<tr>
+						<td>Test</td>
 						<td>Test</td>
 						<td>Test</td>
 						<td>Test</td>
@@ -69,19 +69,47 @@
 			</table>
 
 			<!-- Add roles to a user -->
-			<form action="">
+			<form id="adminUserRolesForm" action="">
 				<fieldset>
 					<legend>User Roles</legend>
 					<select>
 						<option>Admin</option>
 						<option>DBA</option>
-						<option selected>Chat Moderator</option>
+						<option selected="selected">Chat Moderator</option>
 					</select>
 					<button>Add Role(s)</button>
 					<button>Remove Role(s)</button>
 				</fieldset>
 			</form>
 		</section>
+		
+		<button id="userFormBtn">Show User Form</button>
+		<!-- display registration form -->
+		<section id="userFormContainer">
+			<form id="userForm" method="post" th:action="@{/admin}"
+				th:object="${user}">
+				<fieldset>
+					<legend>Create an Account</legend>
+					<p>
+						<label for="username">Enter a Username</label><br /> <input id="username"
+							th:field="*{username}" class="fixed-width" type="text"
+							maxlength="30" />
+					</p>
+					<p>
+						<label for="email">Enter an Email</label><br /> <input id="email"
+							th:field="*{email}" class="fixed-width" type="email"
+							maxlength="50" />
+					</p>
+					<p>
+						<label for="password">Enter a Password</label><br /> <input id="password"
+							th:field="*{password}" class="fixed-width" type="password"
+							maxlength="20" />
+					</p>
+					<input id="createUserBtn" type="submit" value="CREATE"/>
+				</fieldset>	
+			</form>
+		</section>
+
 		<aside>
 			<!-- prereq: show a list of strings 
             		<div th:with="strList = ${ {'X', 'Y', 'Z'} }">
@@ -100,13 +128,26 @@
 		<footer class="clear">Coffee House &copy; FALL 2016</footer>
 	</div>
 	<script type="text/javascript">
-        $(document).ready(function() {
-          //alert("document ready!");
-          $('.editBtn').click(function() {
-            $(this).html($(this).html() == 'Edit' ? 'Modify' : 'Edit');
-          });
-        });
-
-      </script>
+		$(document).ready(function() 
+		{
+			//alert("document ready!");
+			/*$('.editBtn').click(function() {
+				$(this).html($(this).html() == 'Edit' ? 'Modify' : 'Edit');
+			});*/
+			
+			//Show/Hide the User Form
+			$('#userFormBtn').click(function() {
+				console.log("Show/Hide button clicked");
+			});
+			
+			//User List - Options
+			//Edit Button
+			//Delete Button
+			
+			//User Roles - Options
+			//Add User Role(s)
+			//Delete User Role(s)
+		});
+	</script>
 </body>
 </html>
