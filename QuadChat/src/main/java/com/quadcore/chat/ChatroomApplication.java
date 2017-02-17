@@ -13,7 +13,7 @@ import com.quadcore.chat.model.UserRole;
 import com.quadcore.chat.repository.RoleRepository;
 
 /**
- * The class the bootstraps the Spring Boot Application
+ * The class that bootstraps the Spring Boot Application
  * <p>
  * @author Quadcore
  * @version 1.0
