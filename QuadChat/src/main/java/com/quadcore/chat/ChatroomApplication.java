@@ -40,7 +40,7 @@ public class ChatroomApplication {
 		}
 		//private RoleRepository roleRepository;
 		
-		User user = new User("Belum", "password", "belum@gmail.com");
+		User user = new User("username", "password", "email@email.com");
 		user.setActivated(true);
 		user.setUserId(2L);
 		user.setCreatedDate(new Date());
